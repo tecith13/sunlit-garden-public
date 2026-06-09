@@ -1,0 +1,178 @@
+[gd_scene format=3 uid="uid://dexwl40w8jbho"]
+
+[ext_resource type="PackedScene" uid="uid://dvaabp4wv6aur" path="res://scenes/world/World.tscn" id="1_nha0i"]
+[ext_resource type="Script" uid="uid://cml80cojwon7w" path="res://scripts/managers/ToolManager.gd" id="3_q24mn"]
+[ext_resource type="Script" uid="uid://dduy1ncgpbn2o" path="res://scripts/data/ItemDatabase.gd" id="3_qkm1d"]
+[ext_resource type="Script" uid="uid://bvelvpvmljg82" path="res://scripts/managers/GameManager.gd" id="4_gyg6b"]
+[ext_resource type="Script" uid="uid://6tcqrwteq7jr" path="res://scripts/managers/LocalizationManager.gd" id="4_ostsq"]
+[ext_resource type="Script" uid="uid://csgi61bqsegs5" path="res://scripts/managers/InventoryManager.gd" id="5_dc040"]
+[ext_resource type="Script" uid="uid://jnq5byekbs0x" path="res://scripts/managers/UIManager.gd" id="6_1rhdn"]
+[ext_resource type="Script" uid="uid://boee2kfnt3px2" path="res://scripts/managers/SaveManager.gd" id="6_sjxhf"]
+[ext_resource type="Script" uid="uid://cn376y1filigx" path="res://scripts/data/CropDatabase.gd" id="7_ko0rf"]
+[ext_resource type="Script" uid="uid://cig2ytpsuo5fl" path="res://scripts/world/WorldGrid.gd" id="8_2tpxt"]
+[ext_resource type="Script" uid="uid://8ohglq1gxaul" path="res://scripts/world/TerrainManager.gd" id="9_jsdfw"]
+[ext_resource type="Texture2D" uid="uid://cxyyb721psnk5" path="res://assets/sprites/icons/carrot_seed_icon.png" id="9_ostsq"]
+[ext_resource type="Texture2D" uid="uid://dw1b5jbjy07w" path="res://assets/sprites/icons/carrot_icon.png" id="10_3km4f"]
+[ext_resource type="Texture2D" uid="uid://cbch1o7e3idug" path="res://assets/ui/status note no line.png" id="10_p5fgu"]
+[ext_resource type="Script" uid="uid://bimi2406rd6nb" path="res://scripts/world/WorldAreaManager.gd" id="10_tck0d"]
+[ext_resource type="Script" uid="uid://bx4s4jd6rkvnu" path="res://scripts/world/WorldLayoutBootstrap.gd" id="11_grv7h"]
+[ext_resource type="Script" uid="uid://bfjqvcdbc0upv" path="res://scripts/world/debug/StarterRegionMiniMapDebug.gd" id="14_rikml"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p5fgu"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_p5fgu"]
+load_path = "res://.godot/imported/money_icon.png-0ec1c358cf42a200d82a4deb39f29d52.ctex"
+
+[node name="Main" type="Node2D" unique_id=210608423]
+
+[node name="GameManager" type="Node" parent="." unique_id=1491628321 groups=["game_manager"]]
+script = ExtResource("4_gyg6b")
+
+[node name="SaveManager" type="Node" parent="." unique_id=1037188903]
+script = ExtResource("6_sjxhf")
+
+[node name="CropDatabase" type="Node" parent="." unique_id=1296484746]
+script = ExtResource("7_ko0rf")
+
+[node name="ItemDatabase" type="Node" parent="." unique_id=1786511454 groups=["item_database"]]
+script = ExtResource("3_qkm1d")
+
+[node name="LocalizationManager" type="Node" parent="." unique_id=170608920]
+script = ExtResource("4_ostsq")
+
+[node name="InventoryManager" type="Node" parent="." unique_id=1273953501 groups=["inventory_manager"]]
+script = ExtResource("5_dc040")
+
+[node name="ToolManager" type="Node" parent="." unique_id=1600955016 groups=["tool_manager"]]
+script = ExtResource("3_q24mn")
+
+[node name="WorldGrid" type="Node" parent="." unique_id=1806020250]
+script = ExtResource("8_2tpxt")
+
+[node name="TerrainManager" type="Node" parent="." unique_id=1203685911]
+script = ExtResource("9_jsdfw")
+
+[node name="WorldAreaManager" type="Node" parent="." unique_id=2019159380]
+script = ExtResource("10_tck0d")
+
+[node name="WorldLayoutBootstrap" type="Node" parent="." unique_id=1245358180]
+script = ExtResource("11_grv7h")
+playerHouseBackgroundPath = NodePath("../World/Objects/HouseBackgroundVisuals/PlayerHouseBackground")
+playerHouseForegroundPath = NodePath("../World/Objects/HouseForegroundVisuals/PlayerHouseForeground")
+
+[node name="World" parent="." unique_id=353991986 instance=ExtResource("1_nha0i")]
+
+[node name="DebugCanvas" type="CanvasLayer" parent="." unique_id=2096052088]
+visible = false
+scale = Vector2(1.3, 1.3)
+transform = Transform2D(1.3, 0, 0, 1.3, 0, 0)
+
+[node name="StarterRegionMiniMapDebug" type="Control" parent="DebugCanvas" unique_id=1396155114]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("14_rikml")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=2036747521 groups=["ui_manager"]]
+script = ExtResource("6_1rhdn")
+
+[node name="StatusPanel" type="PanelContainer" parent="UI" unique_id=89022306]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 236.0
+offset_bottom = 170.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_p5fgu")
+
+[node name="StatusRoot" type="Control" parent="UI/StatusPanel" unique_id=929147605]
+layout_mode = 2
+
+[node name="NotebookBg" type="TextureRect" parent="UI/StatusPanel/StatusRoot" unique_id=571675626]
+custom_minimum_size = Vector2(256, 192)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("10_p5fgu")
+stretch_mode = 2
+
+[node name="StatusList" type="VBoxContainer" parent="UI/StatusPanel/StatusRoot" unique_id=658209703]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 34.0
+offset_right = 238.0
+offset_bottom = 173.0
+theme_override_constants/separation = 5
+
+[node name="DayLabel" type="Label" parent="UI/StatusPanel/StatusRoot/StatusList" unique_id=449718928]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3529412, 0.2901961, 0.19607843, 1)
+text = "Day: 1"
+
+[node name="MoneyRow" type="HBoxContainer" parent="UI/StatusPanel/StatusRoot/StatusList" unique_id=316810751]
+layout_mode = 2
+
+[node name="MoneyIcon" type="TextureRect" parent="UI/StatusPanel/StatusRoot/StatusList/MoneyRow" unique_id=1940405188]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = SubResource("CompressedTexture2D_p5fgu")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="MoneyLabel" type="Label" parent="UI/StatusPanel/StatusRoot/StatusList/MoneyRow" unique_id=1416115083]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3529412, 0.2901961, 0.19607843, 1)
+text = "Money: 0"
+
+[node name="ToolRow" type="HBoxContainer" parent="UI/StatusPanel/StatusRoot/StatusList" unique_id=934395881]
+layout_mode = 2
+
+[node name="ToolIcon" type="TextureRect" parent="UI/StatusPanel/StatusRoot/StatusList/ToolRow" unique_id=1240837222]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+expand_mode = 2
+stretch_mode = 5
+
+[node name="ToolLabel" type="Label" parent="UI/StatusPanel/StatusRoot/StatusList/ToolRow" unique_id=1804637368]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3529412, 0.2901961, 0.19607843, 1)
+text = "Tool: Hand"
+
+[node name="SeedRow" type="HBoxContainer" parent="UI/StatusPanel/StatusRoot/StatusList" unique_id=55445301]
+layout_mode = 2
+
+[node name="SeedIcon" type="TextureRect" parent="UI/StatusPanel/StatusRoot/StatusList/SeedRow" unique_id=1829865580]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("9_ostsq")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="SeedLabel" type="Label" parent="UI/StatusPanel/StatusRoot/StatusList/SeedRow" unique_id=558532327]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3529412, 0.2901961, 0.19607843, 1)
+text = "Seeds: 0"
+
+[node name="CarrotRow" type="HBoxContainer" parent="UI/StatusPanel/StatusRoot/StatusList" unique_id=877319231]
+layout_mode = 2
+
+[node name="CarrotIcon" type="TextureRect" parent="UI/StatusPanel/StatusRoot/StatusList/CarrotRow" unique_id=409029064]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("10_3km4f")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="CarrotLabel" type="Label" parent="UI/StatusPanel/StatusRoot/StatusList/CarrotRow" unique_id=1904497698]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3529412, 0.2901961, 0.19607843, 1)
+text = "Carrots: 0"
+
+[node name="FeedbackLabel" type="Label" parent="UI" unique_id=1164850949]
+visible = false
+offset_left = 300.0
+offset_top = 420.0
+offset_right = 340.0
+offset_bottom = 443.0
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,19 @@
+{
+  "carrot": {
+	"displayName": "Carrot",
+	"displayNameKey": "item.carrot",
+	"category": "crop",
+	"icon": "res://assets/sprites/icons/carrot_icon.png",
+	"stackLimit": 99,
+	"sellPrice": 20
+  },
+  "carrot_seed": {
+	"displayName": "Carrot Seed",
+	"displayNameKey": "item.carrot_seed",
+	"category": "seed",
+	"icon": "res://assets/sprites/icons/carrot_seed_icon.png",
+	"stackLimit": 99,
+	"buyPrice": 10,
+	"cropId": "carrot"
+  }
+}

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bydsmxgy3wdbc"]
+
+[ext_resource type="Script" uid="uid://m5tn2yyft7mq" path="res://scripts/environment/LowBushOverlay.gd" id="1_wbpqw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wbpqw"]
+
+[node name="LowBushOverlay" type="Area2D" unique_id=36748536]
+monitorable = false
+script = ExtResource("1_wbpqw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2015869667]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=874955800]
+shape = SubResource("CircleShape2D_wbpqw")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=696263304]

@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://b38s4u4uetm7q"]
+
+[ext_resource type="Script" uid="uid://m5u6kjlpv2h" path="res://scripts/environment/clearables/DeadGrassPatch.gd" id="1_pxldx"]
+[ext_resource type="Texture2D" uid="uid://capu336u4k0xp" path="res://assets/sprites/ground/clutter/dry_grass/dry_grass_07.png" id="2_pxldx"]
+[ext_resource type="Texture2D" uid="uid://c5050frqwmvif" path="res://assets/sprites/ground/clutter/dry_grass/dry_grass_05.png" id="3_1413q"]
+[ext_resource type="Texture2D" uid="uid://dvptmciw4ul7n" path="res://assets/sprites/ground/clutter/dry_grass/dry_grass_06.png" id="4_ebpti"]
+[ext_resource type="Texture2D" path="res://assets/sprites/ground/dry_dirt/dry_dirt_patch_01.png" id="5_soil"]
+[ext_resource type="Texture2D" uid="uid://0crd58v7g1y7" path="res://assets/sprites/tiles/grass/grass_tuft_06.png" id="6_recovery"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pxldx"]
+size = Vector2(24, 15)
+
+[node name="DeadGrassScatterSmall" type="Area2D" unique_id=708142026]
+modulate = Color(0.9411765, 0.9098039, 0.80784315, 0.8509804)
+script = ExtResource("1_pxldx")
+idleWindEnabled = false
+
+[node name="SoilPatchSprite" type="Sprite2D" parent="."]
+texture_filter = 1
+z_index = -1
+position = Vector2(0, -6)
+texture = ExtResource("5_soil")
+
+[node name="RecoverySprite" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0.68, 0.82, 0.54, 0.8)
+texture_filter = 1
+position = Vector2(1, -7)
+scale = Vector2(0.8, 0.75)
+texture = ExtResource("6_recovery")
+
+[node name="VisualRoot" type="Node2D" parent="." unique_id=1786450865]
+
+[node name="GrassPivot_01" type="Node2D" parent="VisualRoot" unique_id=770791001]
+position = Vector2(-5, 0)
+
+[node name="GrassSprite" type="Sprite2D" parent="VisualRoot/GrassPivot_01" unique_id=1580613475]
+position = Vector2(1, -25)
+texture = ExtResource("2_pxldx")
+
+[node name="GrassPivot_02" type="Node2D" parent="VisualRoot" unique_id=1818170112]
+position = Vector2(6, -1)
+
+[node name="GrassSprite" type="Sprite2D" parent="VisualRoot/GrassPivot_02" unique_id=701829643]
+position = Vector2(1, -17)
+texture = ExtResource("3_1413q")
+
+[node name="GrassPivot_03" type="Node2D" parent="VisualRoot" unique_id=2050021534]
+position = Vector2(0, 1)
+
+[node name="GrassSprite" type="Sprite2D" parent="VisualRoot/GrassPivot_03" unique_id=374992260]
+position = Vector2(0, -11)
+texture = ExtResource("4_ebpti")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=848301603]
+position = Vector2(-1, -2.5)
+shape = SubResource("RectangleShape2D_pxldx")

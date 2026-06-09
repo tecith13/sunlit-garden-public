@@ -1,0 +1,41 @@
+{
+  "ui.day": "일차",
+  "ui.money": "돈",
+  "ui.tool": "도구",
+  "ui.seeds": "씨앗",
+  "ui.carrots": "당근",
+  "ui.day_count": "%d일차",
+
+  "item.carrot": "당근",
+  "item.carrot_seed": "당근 씨앗",
+
+  "tool.hand": "손",
+  "tool.hoe": "괭이",
+  "tool.watering_can": "물뿌리개",
+  "tool.seed": "씨앗",
+
+  "interaction.shop": "상점",
+  "interaction.shipping_box": "판매 상자",
+  "interaction.sleep": "잠자기",
+
+  "feedback.not_enough_seed": "씨앗이 부족합니다.",
+  "feedback.no_carrots_to_sell": "판매할 당근이 없습니다.",
+  "feedback.sold_carrots": "당근을 판매했습니다.",
+  "feedback.bought_seed": "씨앗을 구입했습니다.",
+  "feedback.not_enough_money": "돈이 부족합니다.",
+  "feedback.next_day": "다음 날이 되었습니다.",
+
+  "feedback.bought_item": "%s 구매",
+  "feedback.planted_crop": "%s 심기",
+  "feedback.harvested_crop": "+1 %s",
+  "feedback.sold_money": "+%d 돈",
+  "feedback.no_crop_to_sell": "판매할 %s 없음",
+  "feedback.not_enough_money": "돈이 부족합니다",
+  "feedback.not_enough_seed": "씨앗이 부족합니다",
+  "feedback.watered": "물 주기 완료",
+  "feedback.already_watered": "이미 물을 준 칸입니다",
+  "feedback.next_day": "%d일차",
+  "feedback.found_item": "%s 발견",
+  "feedback.found_seed": "%s 씨앗을 발견했다",
+  "feedback.found_item_amount": "%s %s개 발견"
+}

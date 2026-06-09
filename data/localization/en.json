@@ -1,0 +1,41 @@
+{
+  "ui.day": "Day",
+  "ui.money": "Money",
+  "ui.tool": "Tool",
+  "ui.seeds": "Seeds",
+  "ui.carrots": "Carrots",
+  "ui.day_count": "Day %d",
+
+  "item.carrot": "Carrot",
+  "item.carrot_seed": "Carrot Seed",
+
+  "tool.hand": "Hand",
+  "tool.hoe": "Hoe",
+  "tool.watering_can": "Watering Can",
+  "tool.seed": "Seed",
+
+  "interaction.shop": "Shop",
+  "interaction.shipping_box": "Shipping Box",
+  "interaction.sleep": "Sleep",
+
+  "feedback.not_enough_seed": "Not enough seeds.",
+  "feedback.no_carrots_to_sell": "No carrots to sell.",
+  "feedback.sold_carrots": "Sold carrots.",
+  "feedback.bought_seed": "Bought seeds.",
+  "feedback.not_enough_money": "Not enough money.",
+  "feedback.next_day": "A new day begins.",
+
+  "feedback.bought_item": "Bought %s",
+  "feedback.planted_crop": "Planted %s",
+  "feedback.harvested_crop": "+1 %s",
+  "feedback.sold_money": "+%d Money",
+  "feedback.no_crop_to_sell": "No %s to sell",
+  "feedback.not_enough_money": "Not enough money",
+  "feedback.not_enough_seed": "Not enough seed",
+  "feedback.watered": "Watered",
+  "feedback.already_watered": "Already watered",
+  "feedback.next_day": "Day %d",
+  "feedback.found_item": "Found %s",
+  "feedback.found_seed": "Found %s seed",
+  "feedback.found_item_amount": "Found %s x%s"
+}

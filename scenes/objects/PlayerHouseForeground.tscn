@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://cnp22cer6kjcl"]
+
+[ext_resource type="Texture2D" uid="uid://bvfto3ix3hsjs" path="res://assets/sprites/tiles/house/player_house/front wall left 01.png" id="1_frontleft"]
+[ext_resource type="Texture2D" uid="uid://xkjc4ui7sma5" path="res://assets/sprites/tiles/house/player_house/front wall right 01.png" id="2_frontright"]
+[ext_resource type="Texture2D" uid="uid://djjni4uyln1ar" path="res://assets/sprites/tiles/house/player_house/foundation contact 01.png" id="3_foundation"]
+[ext_resource type="Texture2D" uid="uid://hrr7ousy6g7b" path="res://assets/sprites/tiles/house/player_house/TopThickness front back 01.png" id="4_topfb"]
+[ext_resource type="Texture2D" uid="uid://di55htegkyebn" path="res://assets/sprites/tiles/house/player_house/TopThickness front corner.png" id="5_frontcorner"]
+[ext_resource type="Texture2D" uid="uid://dl13n7ekkfoai" path="res://assets/sprites/tiles/house/player_house/door 01.png" id="6_door"]
+[ext_resource type="Texture2D" uid="uid://itvqgtsmesqq" path="res://assets/sprites/tiles/house/player_house/door wall 01.png" id="7_doorwall"]
+[ext_resource type="Texture2D" uid="uid://cy5b7k6g5nn4m" path="res://assets/sprites/tiles/house/player_house/Wooden Pilar 01.png" id="8_pillar"]
+
+[node name="PlayerHouseForeground" type="Node2D" unique_id=874957064]
+
+[node name="FrontWallRoot" type="Node2D" parent="." unique_id=296950934]
+position = Vector2(0, -104)
+
+[node name="FrontWallLeftBase" type="Sprite2D" parent="FrontWallRoot" unique_id=18514844]
+position = Vector2(-80, 40)
+texture = ExtResource("1_frontleft")
+
+[node name="FrontWallLeftTopThickness" type="Sprite2D" parent="FrontWallRoot" unique_id=476232664]
+texture_repeat = 2
+position = Vector2(-80, -28)
+texture = ExtResource("4_topfb")
+region_enabled = true
+region_rect = Rect2(0, 0, 96, 9)
+
+[node name="FrontWallLeftFoundationContact" type="Sprite2D" parent="FrontWallRoot" unique_id=1927053631]
+texture_repeat = 2
+position = Vector2(-80, 101)
+texture = ExtResource("3_foundation")
+region_enabled = true
+region_rect = Rect2(0, 0, 96, 8)
+
+[node name="FrontWallLeftTopThicknessCorner" type="Sprite2D" parent="FrontWallRoot" unique_id=1870593145]
+position = Vector2(-133, -28)
+texture = ExtResource("5_frontcorner")
+
+[node name="FrontWallRightBase" type="Sprite2D" parent="FrontWallRoot" unique_id=799267529]
+position = Vector2(80, 40)
+texture = ExtResource("2_frontright")
+
+[node name="FrontWallRightTopThickness" type="Sprite2D" parent="FrontWallRoot" unique_id=1996173457]
+texture_repeat = 2
+position = Vector2(80, -28)
+texture = ExtResource("4_topfb")
+region_enabled = true
+region_rect = Rect2(0, 0, 96, 9)
+
+[node name="FrontWallRIghtTopThicknessCorner" type="Sprite2D" parent="FrontWallRoot" unique_id=5657998]
+position = Vector2(133, -28)
+texture = ExtResource("5_frontcorner")
+
+[node name="FrontWallRightFoundationContact" type="Sprite2D" parent="FrontWallRoot" unique_id=1368642105]
+texture_repeat = 2
+position = Vector2(80, 101)
+texture = ExtResource("3_foundation")
+region_enabled = true
+region_rect = Rect2(0, 0, 96, 8)
+
+[node name="Door" type="Sprite2D" parent="FrontWallRoot" unique_id=1229710235]
+position = Vector2(0, 61)
+texture = ExtResource("6_door")
+
+[node name="DoorWall" type="Sprite2D" parent="FrontWallRoot" unique_id=886497787]
+position = Vector2(0, 40)
+texture = ExtResource("7_doorwall")
+
+[node name="DoorWallTopThickness" type="Sprite2D" parent="FrontWallRoot" unique_id=1279674181]
+texture_repeat = 2
+position = Vector2(0, -28)
+texture = ExtResource("4_topfb")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 9)
+
+[node name="WooenPillarLeft" type="Sprite2D" parent="FrontWallRoot" unique_id=411895910]
+position = Vector2(-128, 40)
+texture = ExtResource("8_pillar")
+
+[node name="WooenPillarRight" type="Sprite2D" parent="FrontWallRoot" unique_id=1164148135]
+position = Vector2(128, 40)
+texture = ExtResource("8_pillar")
+flip_h = true

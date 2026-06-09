@@ -1,0 +1,16 @@
+{
+  "carrot": {
+	"displayName": "Carrot",
+	"displayNameKey": "item.carrot",
+	"seedItemId": "carrot_seed",
+	"maxGrowthStage": 3,
+	"seedPrice": 10,
+	"sellPrice": 20,
+	"stageSprites": {
+	  "0": "res://assets/sprites/crops/carrot/carrot_stage_0.png",
+	  "1": "res://assets/sprites/crops/carrot/carrot_stage_1.png",
+	  "2": "res://assets/sprites/crops/carrot/carrot_stage_2.png",
+	  "3": "res://assets/sprites/crops/carrot/carrot_stage_3.png"
+	}
+  }
+}

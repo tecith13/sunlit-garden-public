@@ -1,0 +1,157 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" uid="uid://m5u6kjlpv2h" path="res://scripts/environment/clearables/DeadGrassPatch.gd" id="1_cluster"]
+[ext_resource type="Texture2D" uid="uid://cse3kojyhndl8" path="res://assets/sprites/ground/clutter/dry_grass/dry_grass_01.png" id="2_grass_a"]
+[ext_resource type="Texture2D" uid="uid://cim2y6khi6y84" path="res://assets/sprites/ground/clutter/dry_grass/dry_grass_02.png" id="3_grass_b"]
+[ext_resource type="Texture2D" uid="uid://c7qek11nrmu2a" path="res://assets/sprites/ground/clutter/dry_grass/dry_grass_03.png" id="4_grass_c"]
+[ext_resource type="Texture2D" uid="uid://mrrc7qxsnf0v" path="res://assets/sprites/ground/clutter/dry_grass/dry_grass_02_small.png" id="5_grass_small"]
+[ext_resource type="Texture2D" uid="uid://capu336u4k0xp" path="res://assets/sprites/ground/clutter/dry_grass/dry_grass_07.png" id="6_scatter_a"]
+[ext_resource type="Texture2D" uid="uid://c5050frqwmvif" path="res://assets/sprites/ground/clutter/dry_grass/dry_grass_05.png" id="7_scatter_b"]
+[ext_resource type="Texture2D" uid="uid://c05wsaskmrnsc" path="res://assets/sprites/environment/ground_decals/soil_stains/soil stain 08.png" id="8_soil"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cluster"]
+size = Vector2(150, 72)
+
+[node name="DeadGrassClusterLarge" type="Area2D"]
+modulate = Color(0.9404036, 0.90848714, 0.80633885, 0.8509804)
+script = ExtResource("1_cluster")
+interactDistance = 56.0
+
+[node name="SoilPatchSprite" type="Sprite2D" parent="."]
+texture_filter = 1
+z_index = -1
+position = Vector2(0, -18)
+scale = Vector2(2.5, 1.9)
+texture = ExtResource("8_soil")
+
+[node name="VisualRoot" type="Node2D" parent="."]
+
+[node name="GrassPivot_01" type="Node2D" parent="VisualRoot"]
+position = Vector2(-84, -6)
+
+[node name="GrassSprite" type="Sprite2D" parent="VisualRoot/GrassPivot_01"]
+position = Vector2(0, -36)
+texture = ExtResource("2_grass_a")
+
+[node name="GrassPivot_02" type="Node2D" parent="VisualRoot"]
+position = Vector2(-58, -18)
+
+[node name="GrassSprite" type="Sprite2D" parent="VisualRoot/GrassPivot_02"]
+position = Vector2(1, -36)
+texture = ExtResource("3_grass_b")
+flip_h = true
+
+[node name="GrassPivot_03" type="Node2D" parent="VisualRoot"]
+position = Vector2(-28, -9)
+
+[node name="GrassSprite" type="Sprite2D" parent="VisualRoot/GrassPivot_03"]
+position = Vector2(-1, -33)
+texture = ExtResource("4_grass_c")
+
+[node name="GrassPivot_04" type="Node2D" parent="VisualRoot"]
+position = Vector2(6, -18)
+
+[node name="GrassSprite" type="Sprite2D" parent="VisualRoot/GrassPivot_04"]
+position = Vector2(0, -34)
+texture = ExtResource("2_grass_a")
+flip_h = true
+
+[node name="GrassPivot_05" type="Node2D" parent="VisualRoot"]
+position = Vector2(42, -7)
+
+[node name="GrassSprite" type="Sprite2D" parent="VisualRoot/GrassPivot_05"]
+position = Vector2(0, -23)
+texture = ExtResource("5_grass_small")
+
+[node name="GrassPivot_06" type="Node2D" parent="VisualRoot"]
+position = Vector2(78, -14)
+
+[node name="GrassSprite" type="Sprite2D" parent="VisualRoot/GrassPivot_06"]
+position = Vector2(0, -23)
+texture = ExtResource("5_grass_small")
+flip_h = true
+
+[node name="GrassPivot_07" type="Node2D" parent="VisualRoot"]
+position = Vector2(-70, 22)
+
+[node name="GrassSprite" type="Sprite2D" parent="VisualRoot/GrassPivot_07"]
+position = Vector2(0, -34)
+texture = ExtResource("3_grass_b")
+
+[node name="GrassPivot_08" type="Node2D" parent="VisualRoot"]
+position = Vector2(-38, 33)
+
+[node name="GrassSprite" type="Sprite2D" parent="VisualRoot/GrassPivot_08"]
+position = Vector2(-1, -29)
+texture = ExtResource("4_grass_c")
+flip_h = true
+
+[node name="GrassPivot_09" type="Node2D" parent="VisualRoot"]
+position = Vector2(-4, 20)
+
+[node name="GrassSprite" type="Sprite2D" parent="VisualRoot/GrassPivot_09"]
+position = Vector2(0, -36)
+texture = ExtResource("2_grass_a")
+
+[node name="GrassPivot_10" type="Node2D" parent="VisualRoot"]
+position = Vector2(31, 31)
+
+[node name="GrassSprite" type="Sprite2D" parent="VisualRoot/GrassPivot_10"]
+position = Vector2(1, -36)
+texture = ExtResource("3_grass_b")
+flip_h = true
+
+[node name="GrassPivot_11" type="Node2D" parent="VisualRoot"]
+position = Vector2(62, 18)
+
+[node name="GrassSprite" type="Sprite2D" parent="VisualRoot/GrassPivot_11"]
+position = Vector2(0, -23)
+texture = ExtResource("5_grass_small")
+
+[node name="GrassPivot_12" type="Node2D" parent="VisualRoot"]
+position = Vector2(94, 25)
+
+[node name="GrassSprite" type="Sprite2D" parent="VisualRoot/GrassPivot_12"]
+position = Vector2(-1, -31)
+texture = ExtResource("4_grass_c")
+flip_h = true
+
+[node name="ScatterSprite_01" type="Sprite2D" parent="VisualRoot"]
+position = Vector2(-104, 33)
+texture = ExtResource("6_scatter_a")
+
+[node name="ScatterSprite_02" type="Sprite2D" parent="VisualRoot"]
+position = Vector2(-76, 43)
+texture = ExtResource("7_scatter_b")
+flip_h = true
+
+[node name="ScatterSprite_03" type="Sprite2D" parent="VisualRoot"]
+position = Vector2(-47, 54)
+texture = ExtResource("6_scatter_a")
+flip_h = true
+
+[node name="ScatterSprite_04" type="Sprite2D" parent="VisualRoot"]
+position = Vector2(-12, 43)
+texture = ExtResource("7_scatter_b")
+
+[node name="ScatterSprite_05" type="Sprite2D" parent="VisualRoot"]
+position = Vector2(23, 55)
+texture = ExtResource("6_scatter_a")
+
+[node name="ScatterSprite_06" type="Sprite2D" parent="VisualRoot"]
+position = Vector2(55, 41)
+texture = ExtResource("7_scatter_b")
+flip_h = true
+
+[node name="ScatterSprite_07" type="Sprite2D" parent="VisualRoot"]
+position = Vector2(86, 51)
+texture = ExtResource("6_scatter_a")
+flip_h = true
+
+[node name="ScatterSprite_08" type="Sprite2D" parent="VisualRoot"]
+position = Vector2(111, 33)
+texture = ExtResource("7_scatter_b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_cluster")

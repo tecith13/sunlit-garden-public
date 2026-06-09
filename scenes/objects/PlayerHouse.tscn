@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://qkwhl3vjwsw4"]
+
+[ext_resource type="Script" uid="uid://c4yba3ag4id0o" path="res://scripts/world/House.gd" id="1_6m52w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_segc7"]
+size = Vector2(256, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4praa"]
+size = Vector2(9, 209)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rqb2l"]
+size = Vector2(9, 209)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bbm8v"]
+size = Vector2(107, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iiekr"]
+size = Vector2(107, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n583e"]
+size = Vector2(256, 123)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7xwte"]
+size = Vector2(316, 232)
+
+[node name="PlayerHouse" type="Node2D" unique_id=1466338381]
+script = ExtResource("1_6m52w")
+
+[node name="CollisionRoot" type="Node2D" parent="." unique_id=1444889937]
+position = Vector2(0, 96)
+
+[node name="WallCollision" type="StaticBody2D" parent="CollisionRoot" unique_id=382242154]
+
+[node name="BackWallCollision" type="CollisionShape2D" parent="CollisionRoot/WallCollision" unique_id=934049117]
+position = Vector2(0, -101)
+shape = SubResource("RectangleShape2D_segc7")
+
+[node name="LeftWallCollision" type="CollisionShape2D" parent="CollisionRoot/WallCollision" unique_id=983792480]
+position = Vector2(-132.5, -0.5)
+shape = SubResource("RectangleShape2D_4praa")
+
+[node name="RightWallCollision" type="CollisionShape2D" parent="CollisionRoot/WallCollision" unique_id=1819128552]
+position = Vector2(132.5, -0.5)
+shape = SubResource("RectangleShape2D_rqb2l")
+
+[node name="FrontLeftCollision" type="CollisionShape2D" parent="CollisionRoot/WallCollision" unique_id=898296162]
+position = Vector2(-74.5, 100)
+shape = SubResource("RectangleShape2D_bbm8v")
+
+[node name="FrontRightCollision" type="CollisionShape2D" parent="CollisionRoot/WallCollision" unique_id=514970957]
+position = Vector2(74.5, 100)
+shape = SubResource("RectangleShape2D_iiekr")
+
+[node name="DoorBlockCollision" type="CollisionShape2D" parent="CollisionRoot/WallCollision" unique_id=730661053]
+position = Vector2(0, 61)
+shape = SubResource("RectangleShape2D_segc7")
+disabled = true
+
+[node name="FrontOcclusionArea" type="Area2D" parent="." unique_id=1134538520]
+position = Vector2(0, 96)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FrontOcclusionArea" unique_id=1404710273]
+position = Vector2(0, 29.5)
+shape = SubResource("RectangleShape2D_n583e")
+
+[node name="InteriorArea" type="Area2D" parent="." unique_id=1933791013]
+position = Vector2(0, 96)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteriorArea" unique_id=1001803373]
+shape = SubResource("RectangleShape2D_7xwte")
+
+[node name="VegetationExcludeArea" type="Area2D" parent="." unique_id=990528721 groups=["vegetation_spawn_blocker"]]
+position = Vector2(0, 96)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VegetationExcludeArea" unique_id=2004814245]
+shape = SubResource("RectangleShape2D_7xwte")
+
+[node name="InteractionPoint" type="Marker2D" parent="." unique_id=595422021]
+position = Vector2(0, 96)

@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://c4pvpe2v0qnog"]
+
+[ext_resource type="Texture2D" uid="uid://blw41k1ec5b13" path="res://assets/sprites/environment/stone_walls/basalt/basalt_wall_broken_01.png" id="1_broken"]
+[ext_resource type="Texture2D" uid="uid://q8o3j6baogqp" path="res://assets/sprites/environment/stone_walls/basalt/shadows/basalt_wall_broken_shadow_01.png" id="2_shadow"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_broken"]
+size = Vector2(160, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cx7cu"]
+size = Vector2(160, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vegetation_exclude"]
+size = Vector2(430, 29)
+
+[node name="BasaltWallBroken" type="Node2D" unique_id=1792834933]
+
+[node name="BasaltWallShadow" type="Sprite2D" parent="." unique_id=986638651]
+z_index = -1
+texture_filter = 1
+position = Vector2(0, 12)
+texture = ExtResource("2_shadow")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=687061007]
+texture_filter = 1
+position = Vector2(0, -2.5)
+texture = ExtResource("1_broken")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1636440278]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1822561508]
+position = Vector2(-112, 7)
+shape = SubResource("RectangleShape2D_broken")
+
+[node name="CollisionShape2DRight" type="CollisionShape2D" parent="StaticBody2D" unique_id=710005357]
+position = Vector2(112, 7)
+shape = SubResource("RectangleShape2D_cx7cu")
+
+[node name="VegetationExcludeArea" type="Area2D" parent="." unique_id=1942136619 groups=["vegetation_spawn_blocker"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VegetationExcludeArea" unique_id=392890219]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_vegetation_exclude")

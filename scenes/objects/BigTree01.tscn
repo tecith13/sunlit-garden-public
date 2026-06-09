@@ -1,0 +1,171 @@
+[gd_scene format=3 uid="uid://miw06l63xjfd"]
+
+[ext_resource type="Script" uid="uid://di07876ryv0nh" path="res://scripts/visual/LeafSway.gd" id="1_d5vc7"]
+[ext_resource type="Script" uid="uid://baxnipt2qb12a" path="res://scripts/objects/TreeObject.gd" id="1_ptxtp"]
+[ext_resource type="Texture2D" uid="uid://bfr0kfy6r612e" path="res://assets/sprites/environment/shadows/tree_shadows/shadow 01.png" id="2_oa1al"]
+[ext_resource type="Shader" uid="uid://c2ac2ju08uxsm" path="res://shaders/tree_ground_shadow.gdshader" id="2_uxe0w"]
+[ext_resource type="Texture2D" uid="uid://bw4kf5j1ymxbe" path="res://assets/sprites/objects/trees/big_tree_01/tree 08 leaf 03.png" id="3_ptxtp"]
+[ext_resource type="Texture2D" uid="uid://c7ilm4v55kfpf" path="res://assets/sprites/objects/trees/big_tree_01/tree 08 leaf 01.png" id="4_b7r7c"]
+[ext_resource type="Texture2D" uid="uid://d4aiblgp0w8ad" path="res://assets/sprites/objects/trees/big_tree_01/tree 08 leaf 02.png" id="5_oa1al"]
+[ext_resource type="Texture2D" uid="uid://dfeabrcav2a41" path="res://assets/sprites/objects/trees/big_tree_01/tree 08 trunk.png" id="6_ptxtp"]
+[ext_resource type="Texture2D" uid="uid://dx65menbh4wkv" path="res://assets/sprites/objects/trees/big_tree_01/tree 08 leaf 05.png" id="6_uxe0w"]
+[ext_resource type="Texture2D" uid="uid://c7kyjrgy5e7jf" path="res://assets/sprites/objects/trees/big_tree_01/tree 08 root base.png" id="8_al12v"]
+[ext_resource type="Texture2D" uid="uid://blf4vkredigko" path="res://assets/sprites/objects/trees/big_tree_01/tree 08 branch 01.png" id="9_ygt48"]
+[ext_resource type="Texture2D" uid="uid://dj54stwo1cdwp" path="res://assets/sprites/objects/trees/big_tree_01/tree 08 branch 02.png" id="10_yvbqm"]
+[ext_resource type="Texture2D" uid="uid://c6domft2rh6jc" path="res://assets/sprites/objects/trees/big_tree_01/tree 08 leaf 04.png" id="11_m81ro"]
+[ext_resource type="Texture2D" uid="uid://6lotwo1ebu03" path="res://assets/sprites/objects/trees/big_tree_01/tree 08 plants 03.png" id="12_b7r7c"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_al12v"]
+shader = ExtResource("2_uxe0w")
+shader_parameter/shadow_color = Color(0.1882353, 0.16862746, 0.1254902, 0.2509804)
+shader_parameter/opacity = 0.35
+shader_parameter/edge_softness = 0.45
+shader_parameter/noise_strength = 0.12
+shader_parameter/wind_strength = 1.0
+shader_parameter/wind_speed = 0.35
+shader_parameter/wind_phase = 0.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m81ro"]
+radius = 28.0
+height = 148.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ptxtp"]
+size = Vector2(158.5, 43)
+
+[node name="BigTree01" type="Node2D" unique_id=538056954]
+script = ExtResource("1_ptxtp")
+
+[node name="GroundShadow" type="Sprite2D" parent="." unique_id=170954829]
+z_index = -10
+material = SubResource("ShaderMaterial_al12v")
+position = Vector2(0, 41)
+texture = ExtResource("2_oa1al")
+
+[node name="LeafBack" type="Node2D" parent="." unique_id=1078373616]
+position = Vector2(-2, 88)
+script = ExtResource("1_d5vc7")
+sway_rotation_degrees = 0.3
+sway_position_x = 0.4
+sway_speed = 0.55
+
+[node name="Leaf04" type="Sprite2D" parent="LeafBack" unique_id=592576986]
+position = Vector2(-87, -263)
+texture = ExtResource("3_ptxtp")
+
+[node name="Leaf01" type="Sprite2D" parent="LeafBack" unique_id=1317327167]
+position = Vector2(-86, -194)
+texture = ExtResource("4_b7r7c")
+
+[node name="Leaf02" type="Sprite2D" parent="LeafBack" unique_id=1088108369]
+position = Vector2(21, -242)
+texture = ExtResource("5_oa1al")
+
+[node name="Leaf03" type="Sprite2D" parent="LeafBack" unique_id=1295842002]
+position = Vector2(77, -181)
+texture = ExtResource("3_ptxtp")
+
+[node name="Leaf05" type="Sprite2D" parent="LeafBack" unique_id=1537251922]
+position = Vector2(4, -297)
+texture = ExtResource("6_uxe0w")
+
+[node name="Leaf06" type="Sprite2D" parent="LeafBack" unique_id=1114268049]
+position = Vector2(-60, -325)
+texture = ExtResource("3_ptxtp")
+
+[node name="Leaf07" type="Sprite2D" parent="LeafBack" unique_id=643608738]
+position = Vector2(76, -325)
+texture = ExtResource("3_ptxtp")
+
+[node name="RootBase" type="Sprite2D" parent="." unique_id=36945945]
+position = Vector2(-2, 9)
+texture = ExtResource("8_al12v")
+
+[node name="Trunk" type="Sprite2D" parent="." unique_id=168462136]
+position = Vector2(-9, -66)
+texture = ExtResource("6_ptxtp")
+
+[node name="BranchBack" type="Node2D" parent="." unique_id=4247045]
+position = Vector2(-2, 88)
+
+[node name="Branch01" type="Sprite2D" parent="BranchBack" unique_id=995295074]
+position = Vector2(-63, -282)
+texture = ExtResource("9_ygt48")
+
+[node name="Branch02" type="Sprite2D" parent="BranchBack" unique_id=1093921287]
+position = Vector2(111, -290)
+rotation = 0.7452556
+texture = ExtResource("10_yvbqm")
+flip_h = true
+
+[node name="LeafMid" type="Node2D" parent="." unique_id=282141540]
+position = Vector2(-2, 88)
+script = ExtResource("1_d5vc7")
+sway_rotation_degrees = 0.5
+sway_position_x = 0.7
+sway_speed = 0.7
+
+[node name="Leaf03" type="Sprite2D" parent="LeafMid" unique_id=1962520788]
+position = Vector2(-52, -198)
+texture = ExtResource("11_m81ro")
+
+[node name="Leaf04" type="Sprite2D" parent="LeafMid" unique_id=614066104]
+position = Vector2(60, -266)
+texture = ExtResource("6_uxe0w")
+
+[node name="Leaf05" type="Sprite2D" parent="LeafMid" unique_id=137190489]
+position = Vector2(-44, -283)
+texture = ExtResource("4_b7r7c")
+
+[node name="Leaf06" type="Sprite2D" parent="LeafMid" unique_id=1392575525]
+position = Vector2(51, -220)
+texture = ExtResource("3_ptxtp")
+
+[node name="Leaf07" type="Sprite2D" parent="LeafMid" unique_id=1883142892]
+position = Vector2(-95, -353)
+texture = ExtResource("4_b7r7c")
+
+[node name="Leaf08" type="Sprite2D" parent="LeafMid" unique_id=232830100]
+position = Vector2(-38, -402)
+texture = ExtResource("3_ptxtp")
+
+[node name="Leaf09" type="Sprite2D" parent="LeafMid" unique_id=408591956]
+position = Vector2(50, -403)
+texture = ExtResource("4_b7r7c")
+
+[node name="LeafFront" type="Node2D" parent="." unique_id=514697013]
+position = Vector2(-1, 5)
+script = ExtResource("1_d5vc7")
+sway_speed = 0.85
+
+[node name="Leaf07" type="Sprite2D" parent="LeafFront" unique_id=1163364632]
+position = Vector2(147.99998, -212.99998)
+rotation = 0.23212878
+texture = ExtResource("11_m81ro")
+
+[node name="Leaf08" type="Sprite2D" parent="LeafFront" unique_id=1850066167]
+position = Vector2(-8, -267)
+texture = ExtResource("6_uxe0w")
+
+[node name="Leaf09" type="Sprite2D" parent="LeafFront" unique_id=1052631467]
+position = Vector2(62, -260)
+texture = ExtResource("4_b7r7c")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1634293670]
+position = Vector2(-2, 88)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=349165441]
+position = Vector2(-7.999999, -89)
+rotation = 1.5707964
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("CapsuleShape2D_m81ro")
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=1559627475]
+position = Vector2(-1, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1754990963]
+position = Vector2(-23.25, -12.5)
+shape = SubResource("RectangleShape2D_ptxtp")
+
+[node name="plant01" type="Sprite2D" parent="." unique_id=1272155940]
+position = Vector2(-66, 33)
+texture = ExtResource("12_b7r7c")

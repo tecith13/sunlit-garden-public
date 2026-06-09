@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://bp8w4ajh6dm5n"]
+
+[ext_resource type="Texture2D" uid="uid://3n813wfivdv3" path="res://assets/sprites/tiles/house/player_house/stone floor 02.png" id="1_floor"]
+[ext_resource type="Texture2D" uid="uid://bo24rrbduh5ah" path="res://assets/sprites/tiles/house/player_house/back wall 01.png" id="2_backwall"]
+[ext_resource type="Texture2D" uid="uid://djjni4uyln1ar" path="res://assets/sprites/tiles/house/player_house/foundation contact 01.png" id="3_foundation"]
+[ext_resource type="Texture2D" uid="uid://duhwk22chqw4a" path="res://assets/sprites/tiles/house/player_house/DoorThreshold 02.png" id="4_threshold"]
+[ext_resource type="Texture2D" uid="uid://hrr7ousy6g7b" path="res://assets/sprites/tiles/house/player_house/TopThickness front back 01.png" id="5_topfb"]
+[ext_resource type="Texture2D" uid="uid://o4c6oy0hisrl" path="res://assets/sprites/tiles/house/player_house/TopThickness back corner.png" id="6_backcorner"]
+[ext_resource type="Texture2D" uid="uid://crvydros5evyx" path="res://assets/sprites/tiles/house/player_house/TopThickness left right 01.png" id="7_toplr"]
+
+[node name="PlayerHouseBackground" type="Node2D"]
+
+[node name="FloorRoot" type="Node2D" parent="."]
+position = Vector2(0, 96)
+
+[node name="FloorBase" type="Sprite2D" parent="FloorRoot"]
+texture_repeat = 2
+texture = ExtResource("1_floor")
+region_enabled = true
+region_rect = Rect2(0, 0, 256, 192)
+
+[node name="DoorThreshold" type="Sprite2D" parent="FloorRoot"]
+position = Vector2(1, 98)
+texture = ExtResource("4_threshold")
+
+[node name="BackWallRoot" type="Node2D" parent="."]
+position = Vector2(0, 96)
+
+[node name="BackWallBase" type="Sprite2D" parent="BackWallRoot"]
+position = Vector2(0, -160)
+texture = ExtResource("2_backwall")
+
+[node name="BackWallFoundationContact" type="Sprite2D" parent="BackWallRoot"]
+texture_repeat = 2
+position = Vector2(0, -99)
+texture = ExtResource("3_foundation")
+region_enabled = true
+region_rect = Rect2(0, 0, 256, 8)
+
+[node name="BackWallTopThickness" type="Sprite2D" parent="BackWallRoot"]
+texture_repeat = 2
+position = Vector2(0, -228)
+texture = ExtResource("5_topfb")
+region_enabled = true
+region_rect = Rect2(0, 0, 256, 9)
+
+[node name="BackWallTopThicknessLeftCorner" type="Sprite2D" parent="BackWallRoot"]
+position = Vector2(-133, -228)
+texture = ExtResource("6_backcorner")
+
+[node name="BackWallTopThicknessRightCorner" type="Sprite2D" parent="BackWallRoot"]
+position = Vector2(133, -228)
+texture = ExtResource("6_backcorner")
+
+[node name="SideWallRoot" type="Node2D" parent="."]
+position = Vector2(0, 96)
+
+[node name="LeftWallTopThickness" type="Sprite2D" parent="SideWallRoot"]
+texture_repeat = 2
+position = Vector2(-133, -128)
+texture = ExtResource("7_toplr")
+region_enabled = true
+region_rect = Rect2(0, 0, 10, 192)
+
+[node name="RightWallTopThickness" type="Sprite2D" parent="SideWallRoot"]
+texture_repeat = 2
+position = Vector2(133, -128)
+texture = ExtResource("7_toplr")
+region_enabled = true
+region_rect = Rect2(0, 0, 10, 192)

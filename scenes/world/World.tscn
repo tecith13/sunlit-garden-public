@@ -1,0 +1,1092 @@
+[gd_scene format=3 uid="uid://dvaabp4wv6aur"]
+
+[ext_resource type="Script" uid="uid://pydebovrtv24" path="res://scripts/world/ShippingBox.gd" id="1_1oml7"]
+[ext_resource type="Script" uid="uid://bi5t74u6v5o84" path="res://scripts/world/FieldArea.gd" id="1_5qbjp"]
+[ext_resource type="Script" uid="uid://chdb7npxeawfh" path="res://scripts/world/Shop.gd" id="1_6eebf"]
+[ext_resource type="Texture2D" uid="uid://bltdfod8smc4p" path="res://assets/sprites/tiles/grass/base_grass_03.png" id="1_nres0"]
+[ext_resource type="Texture2D" uid="uid://dhe86o1fh442b" path="res://assets/sprites/ground/dry_dirt/dry_dirt_patch_01.png" id="2_l5ull"]
+[ext_resource type="Texture2D" uid="uid://c77h27dfa3ae6" path="res://assets/sprites/ground/dry_dirt/dry_dirt_patch_04.png" id="3_16fjv"]
+[ext_resource type="Texture2D" uid="uid://dgkpul12dev3j" path="res://assets/sprites/objects/shipping_box/shipping_box.png" id="3_gbddb"]
+[ext_resource type="Texture2D" uid="uid://da1mybt3sgufv" path="res://assets/sprites/objects/shop/shop_front_45deg.png" id="3_i1jm3"]
+[ext_resource type="Texture2D" uid="uid://4ucxwhd7tlaj" path="res://assets/sprites/ground/dry_dirt/dry_dirt_patch_03.png" id="4_8xm5o"]
+[ext_resource type="Texture2D" uid="uid://dwcroi4n7sykv" path="res://assets/sprites/ground/dry_dirt/dry_dirt_patch_02.png" id="5_fe1rh"]
+[ext_resource type="Texture2D" uid="uid://v3ohuhljbmc4" path="res://assets/sprites/ground/scratch/hoe_scratch_01.png" id="6_i08rc"]
+[ext_resource type="PackedScene" uid="uid://chhiebhahqeb1" path="res://scenes/player/Player.tscn" id="7_252at"]
+[ext_resource type="Texture2D" uid="uid://wl2aa5d60h8h" path="res://assets/sprites/ground/scratch/hoe_scratch_02.png" id="7_o0dc1"]
+[ext_resource type="Texture2D" uid="uid://3eg7tpm4skxq" path="res://assets/sprites/ground/scratch/hoe_scratch_03.png" id="8_mmgww"]
+[ext_resource type="Texture2D" uid="uid://dlulu76fyi8jw" path="res://assets/sprites/ground/tilled/hoe_partly_tilled_01.png" id="9_i08rc"]
+[ext_resource type="Texture2D" uid="uid://56onqmxint8w" path="res://assets/sprites/ground/tilled/hoe_partly_tilled_02.png" id="10_o0dc1"]
+[ext_resource type="Texture2D" uid="uid://bci5d2vn3ir6c" path="res://assets/sprites/ground/tilled/hoe_partly_tilled_03.png" id="11_mmgww"]
+[ext_resource type="Script" uid="uid://dx78j5nklv7ru" path="res://scripts/world/WorldPrototypeRendererManager.gd" id="13_2vkyy"]
+[ext_resource type="Script" uid="uid://b0b4ewbl4wyja" path="res://scripts/world/AreaTileFillRenderer.gd" id="13_juaju"]
+[ext_resource type="Texture2D" uid="uid://f3xwl8qt5qn" path="res://assets/sprites/tiles/grass/base_grass_08.png" id="14_06qrm"]
+[ext_resource type="Texture2D" uid="uid://dohwhb7b63gbo" path="res://assets/sprites/tiles/grass/base grass 01.png" id="14_juaju"]
+[ext_resource type="Texture2D" uid="uid://c216foov5e6bb" path="res://assets/sprites/tiles/grass/grass_base_64.png" id="15_34scv"]
+[ext_resource type="Script" uid="uid://dfp7mddatse3a" path="res://scripts/world/prototype_renderers/OldStoneRoadPrototypeRenderer.gd" id="16_d6tky"]
+[ext_resource type="Script" uid="uid://cujkg8jc6pjbs" path="res://scripts/world/prototype_renderers/RuinedGardenAndWestFieldDebugRenderer.gd" id="16_xokg7"]
+[ext_resource type="Script" uid="uid://bc3e68v6fctk6" path="res://scripts/world/prototype_renderers/BrookWaterPrototypeRenderer.gd" id="17_6mhxi"]
+[ext_resource type="Script" uid="uid://cu4iuymf8uh87" path="res://scripts/world/prototype_renderers/VillageSquarePrototypeRenderer.gd" id="18_xclow"]
+[ext_resource type="Script" uid="uid://douxjx8ogg5hx" path="res://scripts/world/prototype_renderers/EastGatheringAndMineralDebugRenderer.gd" id="19_hk3qm"]
+[ext_resource type="Script" uid="uid://bgw1wh4poo3jo" path="res://scripts/world/prototype_renderers/SeedStallAreaDebugRenderer.gd" id="19_hon07"]
+[ext_resource type="PackedScene" uid="uid://u2nmcagqsnu4" path="res://scenes/environment/clearables/DeadGrassPatch.tscn" id="20_o0dc1"]
+[ext_resource type="Script" uid="uid://be5yaqeybrqtk" path="res://scripts/world/prototype_renderers/ShippingTradeAreaDebugRenderer.gd" id="21_iehkj"]
+[ext_resource type="Script" uid="uid://c4avmlm6brr4u" path="res://scripts/environment/VegetationSpawner.gd" id="21_mmgww"]
+[ext_resource type="Script" uid="uid://b88b2mdfy15al" path="res://scripts/world/prototype_renderers/BackForestBlockedPathDebugRenderer.gd" id="22_iqxvy"]
+[ext_resource type="PackedScene" uid="uid://b38s4u4uetm7q" path="res://scenes/environment/clearables/DeadGrassScatterSmall.tscn" id="22_jy5j1"]
+[ext_resource type="Script" uid="uid://huffc66rcm6w" path="res://scripts/world/prototype_renderers/ExternalRoadDebugRenderer.gd" id="23_pi2y4"]
+[ext_resource type="Script" uid="uid://cp6gic0cc0yak" path="res://scripts/world/prototype_renderers/FutureVillageLotDebugRenderer.gd" id="26_g82e4"]
+[ext_resource type="Script" uid="uid://k8ddgteog6r2" path="res://scripts/environment/GrassTuftOverlaySpawner.gd" id="27_117vm"]
+[ext_resource type="Texture2D" uid="uid://cuyttxbnpwcyg" path="res://assets/sprites/environment/ground_decals/soil_stains/soil stain 01.png" id="27_832t1"]
+[ext_resource type="Shader" uid="uid://dry2d6cldgx24" path="res://shaders/vegetation_wind.gdshader" id="27_bpf53"]
+[ext_resource type="Script" uid="uid://ccrbwy7y20081" path="res://scripts/environment/GrassColorPatchSpawner.gd" id="27_e4bm0"]
+[ext_resource type="Texture2D" uid="uid://ulyiey1qx8i3" path="res://assets/sprites/environment/ground_decals/soil_stains/soil stain 02.png" id="28_2dsb8"]
+[ext_resource type="Texture2D" uid="uid://yie6s04womwk" path="res://assets/sprites/tiles/grass/grass_color_patch_01.png" id="28_06qrm"]
+[ext_resource type="Texture2D" uid="uid://v8s35s3t2n27" path="res://assets/sprites/tiles/grass/grass_color_patch_02.png" id="29_06qrm"]
+[ext_resource type="Texture2D" uid="uid://b2ysg80lup5qx" path="res://assets/sprites/environment/ground_decals/soil_stains/soil stain 03.png" id="29_bp22d"]
+[ext_resource type="Texture2D" uid="uid://7xaq65oi7vev" path="res://assets/sprites/tiles/grass/grass_color_patch_03.png" id="30_jevyu"]
+[ext_resource type="Texture2D" uid="uid://dhynrvssbchc7" path="res://assets/sprites/environment/ground_decals/soil_stains/soil stain 04.png" id="30_my3ih"]
+[ext_resource type="Texture2D" uid="uid://bp8q1uwsu8r70" path="res://assets/sprites/environment/ground_decals/soil_stains/soil stain 05.png" id="31_enn7p"]
+[ext_resource type="Texture2D" uid="uid://dq6eomiurkprc" path="res://assets/sprites/environment/ground_decals/soil_stains/soil stain 06.png" id="32_4jsvn"]
+[ext_resource type="Texture2D" uid="uid://48o61skjpmoc" path="res://assets/sprites/tiles/grass/grass_color_patch_05.png" id="32_p5sbp"]
+[ext_resource type="Texture2D" uid="uid://ckcyy0kkjv4mc" path="res://assets/sprites/tiles/grass/grass_color_patch_06.png" id="33_1rh5a"]
+[ext_resource type="Script" uid="uid://bj6h1qd2kk3sf" path="res://scripts/environment/CloverOverlaySpawner.gd" id="33_jevyu"]
+[ext_resource type="Texture2D" uid="uid://0crd58v7g1y7" path="res://assets/sprites/tiles/grass/grass_tuft_06.png" id="33_kqqcm"]
+[ext_resource type="Texture2D" uid="uid://bjoqcq3ih8ycu" path="res://assets/sprites/environment/ground_decals/soil_stains/soil stain 07.png" id="33_my4yt"]
+[ext_resource type="Texture2D" uid="uid://c0j48r6co8q1m" path="res://assets/sprites/tiles/grass/clover_01.png" id="34_js0wh"]
+[ext_resource type="Texture2D" uid="uid://c05wsaskmrnsc" path="res://assets/sprites/environment/ground_decals/soil_stains/soil stain 08.png" id="34_navci"]
+[ext_resource type="Texture2D" uid="uid://bj86uyscxgted" path="res://assets/sprites/tiles/grass/clover_02.png" id="35_js0wh"]
+[ext_resource type="Texture2D" uid="uid://cac336riffskd" path="res://assets/sprites/tiles/grass/grass_tuft_09.png" id="35_p5sbp"]
+[ext_resource type="Texture2D" uid="uid://bivyxmk30nk4v" path="res://assets/sprites/environment/ground_clutter/low_dry_grass/low dry grass 01.png" id="35_tenvm"]
+[ext_resource type="Texture2D" uid="uid://dpdfs6nxf3r38" path="res://assets/sprites/tiles/grass/grass_tuft_10.png" id="36_ajmhc"]
+[ext_resource type="Texture2D" uid="uid://diqkmetj2gi2n" path="res://assets/sprites/tiles/grass/clover_03.png" id="36_jlxe8"]
+[ext_resource type="Texture2D" uid="uid://coggurst8uau4" path="res://assets/sprites/environment/ground_clutter/low_dry_grass/low dry grass 02.png" id="36_t25rt"]
+[ext_resource type="Script" uid="uid://yvi7skjs30ay" path="res://scripts/environment/FlowerOverlaySpawner.gd" id="37_eycl2"]
+[ext_resource type="Texture2D" uid="uid://b28v48y525604" path="res://assets/sprites/environment/ground_clutter/low_dry_grass/low dry grass 03.png" id="37_g8q35"]
+[ext_resource type="PackedScene" uid="uid://qkwhl3vjwsw4" path="res://scenes/objects/PlayerHouse.tscn" id="37_nres0"]
+[ext_resource type="Texture2D" uid="uid://ce7y00vhwqito" path="res://assets/sprites/tiles/grass/grass_tuft_11.png" id="38_06qrm"]
+[ext_resource type="PackedScene" uid="uid://bp8w4ajh6dm5n" path="res://scenes/objects/PlayerHouseBackground.tscn" id="38_house_bg"]
+[ext_resource type="Texture2D" uid="uid://ce817tcu5bdn2" path="res://assets/sprites/environment/ground_clutter/low_dry_grass/low dry grass 04.png" id="38_kdadn"]
+[ext_resource type="Script" uid="uid://l35hmcljuml6" path="res://scripts/objects/MailAccessObject.gd" id="38_nres0"]
+[ext_resource type="Texture2D" uid="uid://cxd4ccwcdq3vk" path="res://assets/sprites/tiles/flower/flower_01.png" id="38_vmak1"]
+[ext_resource type="Texture2D" uid="uid://bivcba3716wwp" path="res://assets/sprites/environment/ground_clutter/low_dry_grass/low dry grass 05.png" id="39_6e5rj"]
+[ext_resource type="PackedScene" uid="uid://cnp22cer6kjcl" path="res://scenes/objects/PlayerHouseForeground.tscn" id="39_house_fg"]
+[ext_resource type="Texture2D" uid="uid://yud67xphwflf" path="res://assets/sprites/tiles/flower/flower_02.png" id="39_vmak1"]
+[ext_resource type="Texture2D" uid="uid://dlt63a78gki22" path="res://assets/sprites/environment/ground_clutter/low_dry_grass/low dry grass 06.png" id="40_3yqxx"]
+[ext_resource type="Texture2D" uid="uid://b1g14b0mv1oaw" path="res://assets/sprites/tiles/flower/flower_03.png" id="40_cp7di"]
+[ext_resource type="Texture2D" uid="uid://coo6tm1gp2jj" path="res://assets/sprites/environment/ground_clutter/low_dry_grass/low dry grass 07.png" id="41_7rqe0"]
+[ext_resource type="Texture2D" uid="uid://qyfu1gxgavae" path="res://assets/sprites/tiles/flower/flower_04.png" id="41_h1p51"]
+[ext_resource type="Texture2D" uid="uid://dl8bh3ohdhjbe" path="res://assets/sprites/tiles/flower/flower_pink_03.png" id="41_lkldd"]
+[ext_resource type="Texture2D" uid="uid://ob8atu2ucefy" path="res://assets/sprites/tiles/flower/flower_08.png" id="42_aacc1"]
+[ext_resource type="Texture2D" uid="uid://du07w2nw7ie3s" path="res://assets/sprites/environment/ground_clutter/low_dry_grass/low dry grass 08.png" id="42_fi8fg"]
+[ext_resource type="Texture2D" uid="uid://la7pn5caercv" path="res://assets/sprites/tiles/flower/flower_pink_08.png" id="42_h1p51"]
+[ext_resource type="Texture2D" uid="uid://byeynfeh0x5rh" path="res://assets/sprites/environment/ground_clutter/low_dry_grass/low dry grass 09.png" id="43_jtpx3"]
+[ext_resource type="Texture2D" uid="uid://dvj3mcu7u66bg" path="res://assets/sprites/environment/ground_clutter/low_dry_grass/low dry grass 10.png" id="44_gora3"]
+[ext_resource type="Script" uid="uid://dgjiuh66xgvt6" path="res://scripts/environment/BushOverlaySpawner.gd" id="45_ekb8v"]
+[ext_resource type="Texture2D" uid="uid://cm84l0ohle5ds" path="res://assets/sprites/environment/ground_clutter/twigs/twig 01.png" id="45_t25rt"]
+[ext_resource type="Texture2D" uid="uid://bdxw13fcnl45q" path="res://assets/sprites/environment/ground_clutter/twigs/twig 03.png" id="46_7rqe0"]
+[ext_resource type="PackedScene" uid="uid://bydsmxgy3wdbc" path="res://scenes/environment/LowBushOverlay.tscn" id="46_ajmhc"]
+[ext_resource type="Texture2D" uid="uid://cntwqukoda13j" path="res://assets/sprites/environment/ground_clutter/fallen_leaves/fallen leaves 02.png" id="46_fi8fg"]
+[ext_resource type="Texture2D" uid="uid://bhuvo71i3mfu5" path="res://assets/sprites/environment/ground_clutter/twigs/twig 04.png" id="47_fi8fg"]
+[ext_resource type="Texture2D" uid="uid://c2d8g7en2jv34" path="res://assets/sprites/environment/ground_clutter/twigs/twig 06.png" id="48_jtpx3"]
+[ext_resource type="Texture2D" uid="uid://m8xy5a0ikn61" path="res://assets/sprites/tiles/flower/flower_lavender_blue_01.png" id="49_1rh5a"]
+[ext_resource type="Texture2D" uid="uid://bybybt7sushpq" path="res://assets/sprites/environment/ground_clutter/twigs/twig 07.png" id="49_gora3"]
+[ext_resource type="Texture2D" uid="uid://cpt6d2dexiw7o" path="res://assets/sprites/tiles/flower/flower_lavender_blue_09.png" id="50_0mng5"]
+[ext_resource type="Texture2D" uid="uid://dlgrmd4tr2atr" path="res://assets/sprites/environment/ground_clutter/fallen_leaves/fallen leaves 01.png" id="50_f0238"]
+[ext_resource type="Texture2D" uid="uid://pkj6qf5qafvm" path="res://assets/sprites/environment/ground_clutter/small_stons/stone 01.png" id="52_jtpx3"]
+[ext_resource type="Texture2D" uid="uid://camode2q338s1" path="res://assets/sprites/environment/ground_clutter/small_stons/stone 03.png" id="53_f0238"]
+[ext_resource type="Texture2D" uid="uid://en8d4tc0wmvl" path="res://assets/sprites/environment/ground_clutter/small_stons/stone 05.png" id="54_q71q4"]
+[ext_resource type="Texture2D" uid="uid://ge6tocwkpr0b" path="res://assets/sprites/environment/bushes/low_bushes/low bush 01.png" id="55_d3ha6"]
+[ext_resource type="Texture2D" uid="uid://7fqif1koxfvd" path="res://assets/sprites/environment/bushes/low_bushes/low bush 02.png" id="56_65rc6"]
+[ext_resource type="Texture2D" uid="uid://bs64i7v87e62d" path="res://assets/sprites/environment/bushes/low_bushes/low bush 03.png" id="57_34scv"]
+[ext_resource type="Texture2D" uid="uid://c7qadaav06bmn" path="res://assets/sprites/environment/bushes/low_bushes/low bush 04.png" id="58_go50p"]
+[ext_resource type="Texture2D" uid="uid://bh6qop1nyvu7v" path="res://assets/sprites/environment/bushes/low_bushes/low bush 06.png" id="59_1hw4x"]
+[ext_resource type="Texture2D" uid="uid://c4yg78oqjkyr4" path="res://assets/sprites/environment/bushes/low_bushes/low bush 07.png" id="60_w5rid"]
+[ext_resource type="PackedScene" uid="uid://miw06l63xjfd" path="res://scenes/objects/BigTree01.tscn" id="66_0mng5"]
+[ext_resource type="PackedScene" uid="uid://bryfniwlxwa1" path="res://scenes/objects/SmallTree02.tscn" id="68_f4f3b"]
+[ext_resource type="PackedScene" uid="uid://yh5mwil2534c" path="res://scenes/objects/SmallTree01.tscn" id="70_mf05o"]
+[ext_resource type="PackedScene" uid="uid://dfxu1s4olwfo0" path="res://scenes/objects/BigTree02.tscn" id="72_doguq"]
+[ext_resource type="PackedScene" uid="uid://c4pvpe2v0qnog" path="res://scenes/environment/stone_walls/BasaltWallBroken.tscn" id="106_rwl3o"]
+[ext_resource type="PackedScene" uid="uid://buqgy4g5tlshq" path="res://scenes/environment/stone_walls/BasaltWallColumn.tscn" id="107_65rc6"]
+[ext_resource type="PackedScene" uid="uid://depotsmn1aq48" path="res://scenes/environment/stone_walls/BasaltWallRubble.tscn" id="108_34scv"]
+[ext_resource type="PackedScene" uid="uid://cecbegu17equr" path="res://scenes/environment/stone_walls/BasaltWallHorizontal.tscn" id="109_go50p"]
+[ext_resource type="PackedScene" uid="uid://xy67xcnypmhg" path="res://scenes/environment/stone_walls/BasaltWallVertical.tscn" id="110_34scv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qjesc"]
+size = Vector2(640, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5qbjp"]
+size = Vector2(640, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1oml7"]
+size = Vector2(16, 480)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6eebf"]
+size = Vector2(16, 480)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i08rc"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_o0dc1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bpf53"]
+shader = ExtResource("27_bpf53")
+shader_parameter/wind_strength = 3.0
+shader_parameter/wind_speed = 3.0
+shader_parameter/wind_frequency = 4.0
+shader_parameter/base_lock = 0.2
+shader_parameter/pixel_step = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cp7di"]
+shader = ExtResource("27_bpf53")
+shader_parameter/wind_strength = 0.8
+shader_parameter/wind_speed = 0.9
+shader_parameter/wind_frequency = 4.5
+shader_parameter/base_lock = 0.35
+shader_parameter/pixel_step = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ekb8v"]
+shader = ExtResource("27_bpf53")
+shader_parameter/wind_strength = 0.8
+shader_parameter/wind_speed = 0.9
+shader_parameter/wind_frequency = 4.5
+shader_parameter/base_lock = 0.35
+shader_parameter/pixel_step = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jy5j1"]
+size = Vector2(188, 122)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_umbuh"]
+size = Vector2(48.5, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_juaju"]
+size = Vector2(49, 46.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lplgh"]
+size = Vector2(67, 733)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_farm_house"]
+size = Vector2(208, 148)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_farm_door"]
+size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_farm_mailbox"]
+size = Vector2(64, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_farm_gate_path"]
+size = Vector2(96, 160)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_farm_south_wall"]
+size = Vector2(1160, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qxiha"]
+size = Vector2(120, 72)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i1jm3"]
+size = Vector2(46, 45)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bmjh4"]
+size = Vector2(72, 80)
+
+[node name="World" type="Node2D" unique_id=353991986]
+
+[node name="Ground" type="Sprite2D" parent="." unique_id=955823676]
+visible = false
+texture_repeat = 2
+texture = ExtResource("1_nres0")
+region_enabled = true
+region_rect = Rect2(0, 0, 1280, 720)
+
+[node name="Boundaries" type="StaticBody2D" parent="." unique_id=1909230517]
+visible = false
+
+[node name="TopBoundary" type="CollisionShape2D" parent="Boundaries" unique_id=149939750]
+position = Vector2(0, -248)
+shape = SubResource("RectangleShape2D_qjesc")
+disabled = true
+
+[node name="BottomBoundary" type="CollisionShape2D" parent="Boundaries" unique_id=41215211]
+position = Vector2(0, 248)
+shape = SubResource("RectangleShape2D_5qbjp")
+disabled = true
+
+[node name="LeftBoundary" type="CollisionShape2D" parent="Boundaries" unique_id=642070348]
+position = Vector2(-328, 0)
+shape = SubResource("RectangleShape2D_1oml7")
+disabled = true
+
+[node name="RightBoundary" type="CollisionShape2D" parent="Boundaries" unique_id=585650124]
+position = Vector2(328, 0)
+shape = SubResource("RectangleShape2D_6eebf")
+disabled = true
+
+[node name="M2GroundTestArea" type="Node2D" parent="." unique_id=1338528495]
+visible = false
+
+[node name="BaseTiles" type="Sprite2D" parent="M2GroundTestArea" unique_id=1178052819]
+light_mask = 5
+texture_filter = 1
+texture_repeat = 2
+texture = ExtResource("2_l5ull")
+region_enabled = true
+region_rect = Rect2(0, 0, 96, 96)
+
+[node name="BaseTiles2" type="Sprite2D" parent="M2GroundTestArea" unique_id=315999789]
+light_mask = 5
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(2, 66)
+texture = ExtResource("5_fe1rh")
+region_enabled = true
+region_rect = Rect2(0, 0, 96, 96)
+
+[node name="BaseTiles11" type="Sprite2D" parent="M2GroundTestArea" unique_id=679970435]
+light_mask = 5
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(67, 63)
+texture = ExtResource("4_8xm5o")
+region_enabled = true
+region_rect = Rect2(0, 0, 96, 96)
+
+[node name="BaseTiles12" type="Sprite2D" parent="M2GroundTestArea" unique_id=1206728204]
+light_mask = 5
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(67, 0)
+texture = ExtResource("3_16fjv")
+region_enabled = true
+region_rect = Rect2(0, 0, 96, 96)
+
+[node name="ScratchTiles" type="Sprite2D" parent="M2GroundTestArea" unique_id=1751358220]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-48, -30)
+texture = ExtResource("6_i08rc")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 32)
+
+[node name="ScratchTiles2" type="Sprite2D" parent="M2GroundTestArea" unique_id=962802713]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-49, 0)
+texture = ExtResource("7_o0dc1")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 32)
+
+[node name="ScratchTiles3" type="Sprite2D" parent="M2GroundTestArea" unique_id=1047377200]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-47, 29)
+texture = ExtResource("8_mmgww")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 32)
+
+[node name="TilledTiles" type="Sprite2D" parent="M2GroundTestArea" unique_id=1046896238]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-79, -30)
+texture = ExtResource("9_i08rc")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 32)
+
+[node name="TilledTiles2" type="Sprite2D" parent="M2GroundTestArea" unique_id=1233688645]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-80, -1)
+texture = ExtResource("10_o0dc1")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 32)
+
+[node name="TilledTiles3" type="Sprite2D" parent="M2GroundTestArea" unique_id=1040548108]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-81, 28)
+texture = ExtResource("11_mmgww")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 32)
+
+[node name="TraceTiles" type="Sprite2D" parent="M2GroundTestArea" unique_id=1338694940]
+position = Vector2(21, 56)
+texture = SubResource("CompressedTexture2D_i08rc")
+
+[node name="WateredTiles" type="Sprite2D" parent="M2GroundTestArea" unique_id=334753058]
+position = Vector2(-11, 56)
+texture = SubResource("CompressedTexture2D_o0dc1")
+
+[node name="TestObjects" type="Sprite2D" parent="M2GroundTestArea" unique_id=2023538642]
+
+[node name="WorldPrototypeRenderers" type="Node2D" parent="." unique_id=455889356]
+script = ExtResource("13_2vkyy")
+miniMapEnabled = false
+
+[node name="AreaTileFills" type="Node2D" parent="WorldPrototypeRenderers" unique_id=585326497]
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="PlayerHomeGrassFill" type="Node2D" parent="WorldPrototypeRenderers/AreaTileFills" unique_id=1540603870]
+script = ExtResource("13_juaju")
+tileTexture = ExtResource("14_06qrm")
+alpha = 1.0
+
+[node name="RuinedGardenFill" type="Node2D" parent="WorldPrototypeRenderers/AreaTileFills" unique_id=1887718929]
+script = ExtResource("13_juaju")
+areaId = "ruined_garden_area"
+tileTexture = ExtResource("15_34scv")
+alpha = 1.0
+zIndexValue = -101
+metadata/_custom_type_script = "uid://b0b4ewbl4wyja"
+
+[node name="WestFieldFill" type="Node2D" parent="WorldPrototypeRenderers/AreaTileFills" unique_id=702427493]
+script = ExtResource("13_juaju")
+areaId = "west_field_expansion_area"
+tileTexture = ExtResource("14_juaju")
+alpha = 0.7
+zIndexValue = -102
+metadata/_custom_type_script = "uid://b0b4ewbl4wyja"
+
+[node name="BackForestFill" type="Node2D" parent="WorldPrototypeRenderers/AreaTileFills" unique_id=518129666]
+script = ExtResource("13_juaju")
+areaId = "back_forest_area"
+tileTexture = ExtResource("14_juaju")
+alpha = 0.8
+zIndexValue = -101
+metadata/_custom_type_script = "uid://b0b4ewbl4wyja"
+
+[node name="OldStoneRoadFill" type="Node2D" parent="WorldPrototypeRenderers/AreaTileFills" unique_id=1351571467]
+visible = false
+script = ExtResource("13_juaju")
+areaId = "old_stone_road_area"
+tileTexture = ExtResource("14_juaju")
+alpha = 0.35
+zIndexValue = -99
+metadata/_custom_type_script = "uid://b0b4ewbl4wyja"
+
+[node name="VillageSquareFill" type="Node2D" parent="WorldPrototypeRenderers/AreaTileFills" unique_id=1268226880]
+script = ExtResource("13_juaju")
+areaId = "village_square_area"
+tileTexture = ExtResource("14_juaju")
+alpha = 0.25
+zIndexValue = -99
+metadata/_custom_type_script = "uid://b0b4ewbl4wyja"
+
+[node name="BrookBankFill" type="Node2D" parent="WorldPrototypeRenderers/AreaTileFills" unique_id=553725477]
+script = ExtResource("13_juaju")
+areaId = "brook_area"
+tileTexture = ExtResource("14_juaju")
+alpha = 0.65
+zIndexValue = -102
+metadata/_custom_type_script = "uid://b0b4ewbl4wyja"
+
+[node name="OldStoneRoadDebugRenderer" type="Node2D" parent="WorldPrototypeRenderers" unique_id=1556616742]
+visible = false
+scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("16_d6tky")
+
+[node name="BrookWaterDebugRenderer" type="Node2D" parent="WorldPrototypeRenderers" unique_id=296946528]
+visible = false
+scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("17_6mhxi")
+
+[node name="VillageSquareDebugRenderer" type="Node2D" parent="WorldPrototypeRenderers" unique_id=1744238094]
+visible = false
+scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("18_xclow")
+
+[node name="SeedStallAreaDebugRenderer" type="Node2D" parent="WorldPrototypeRenderers" unique_id=507145122]
+visible = false
+scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("19_hon07")
+
+[node name="ShippingTradeAreaDebugRenderer" type="Node2D" parent="WorldPrototypeRenderers" unique_id=880485846]
+visible = false
+scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("21_iehkj")
+
+[node name="BackForestBlockedPathDebugRenderer" type="Node2D" parent="WorldPrototypeRenderers" unique_id=82848960]
+visible = false
+scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("22_iqxvy")
+
+[node name="ExternalRoadDebugRenderer" type="Node2D" parent="WorldPrototypeRenderers" unique_id=675092016]
+visible = false
+scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("23_pi2y4")
+
+[node name="RuinedGardenAndWestFieldDebugRenderer" type="Node2D" parent="WorldPrototypeRenderers" unique_id=534186058]
+visible = false
+scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("16_xokg7")
+
+[node name="EastGatheringAndMineralDebugRenderer" type="Node2D" parent="WorldPrototypeRenderers" unique_id=81839544]
+visible = false
+scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("19_hk3qm")
+
+[node name="FutureVillageLotDebugRenderer" type="Node2D" parent="WorldPrototypeRenderers" unique_id=1679685598]
+visible = false
+scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("26_g82e4")
+
+[node name="VisualOverlays" type="Node2D" parent="." unique_id=1464605425]
+z_index = 1
+
+[node name="GroundDecalRoot" type="Node2D" parent="VisualOverlays" unique_id=128569593]
+position = Vector2(0, -1)
+
+[node name="TreeSoilPatches" type="Node2D" parent="VisualOverlays/GroundDecalRoot" unique_id=1602450814]
+
+[node name="SoilPatch_001" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/TreeSoilPatches" unique_id=1301216926]
+position = Vector2(-139, -300)
+texture = ExtResource("27_832t1")
+
+[node name="SoilPatch_002" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/TreeSoilPatches" unique_id=204073914]
+position = Vector2(150, -315)
+texture = ExtResource("28_2dsb8")
+
+[node name="SoilPatch_003" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/TreeSoilPatches" unique_id=69455482]
+position = Vector2(185, -290)
+texture = ExtResource("29_bp22d")
+
+[node name="SoilPatch_004" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/TreeSoilPatches" unique_id=1068898887]
+position = Vector2(-291, -262)
+texture = ExtResource("30_my3ih")
+
+[node name="SoilPatch_005" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/TreeSoilPatches" unique_id=1700483554]
+position = Vector2(-96, -286)
+texture = ExtResource("31_enn7p")
+
+[node name="SoilPatch_006" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/TreeSoilPatches" unique_id=721776866]
+position = Vector2(278, -268)
+texture = ExtResource("32_4jsvn")
+
+[node name="SoilPatch_007" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/TreeSoilPatches" unique_id=1327045943]
+position = Vector2(358, -228)
+texture = ExtResource("33_my4yt")
+
+[node name="SoilPatch_008" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/TreeSoilPatches" unique_id=308146670]
+position = Vector2(388, -191)
+texture = ExtResource("34_navci")
+
+[node name="SoilPatch_009" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/TreeSoilPatches" unique_id=373694422]
+position = Vector2(328, -221)
+texture = ExtResource("27_832t1")
+
+[node name="SoilPatch_010" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/TreeSoilPatches" unique_id=1445057649]
+position = Vector2(-432, -179)
+texture = ExtResource("27_832t1")
+
+[node name="SoilPatch_011" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/TreeSoilPatches" unique_id=438074106]
+position = Vector2(-183, -269)
+texture = ExtResource("28_2dsb8")
+
+[node name="SoilPatch_012" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/TreeSoilPatches" unique_id=69539013]
+position = Vector2(-232.00002, -238)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("32_4jsvn")
+
+[node name="SoilPatch_013" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/TreeSoilPatches" unique_id=1431925064]
+position = Vector2(-65, -359)
+texture = ExtResource("33_my4yt")
+
+[node name="SoilPatch_014" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/TreeSoilPatches" unique_id=882602390]
+position = Vector2(-252, -346)
+texture = ExtResource("33_my4yt")
+
+[node name="SoilPatch_015" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/TreeSoilPatches" unique_id=877523872]
+position = Vector2(-5, -287)
+texture = ExtResource("33_my4yt")
+
+[node name="SoilPatch_016" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/TreeSoilPatches" unique_id=728990532]
+position = Vector2(44, -277)
+texture = ExtResource("31_enn7p")
+
+[node name="SoilPatch_017" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/TreeSoilPatches" unique_id=283700352]
+position = Vector2(147, -272)
+texture = ExtResource("34_navci")
+
+[node name="SoilPatch_018" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/TreeSoilPatches" unique_id=1926014201]
+position = Vector2(-126, -176)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("30_my3ih")
+
+[node name="LowDryGrass" type="Node2D" parent="VisualOverlays/GroundDecalRoot" unique_id=1858369926]
+
+[node name="Grass01" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/LowDryGrass" unique_id=411227680]
+position = Vector2(6, -269)
+texture = ExtResource("35_tenvm")
+
+[node name="Grass02" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/LowDryGrass" unique_id=1029311545]
+position = Vector2(75, -288)
+texture = ExtResource("36_t25rt")
+
+[node name="Grass03" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/LowDryGrass" unique_id=164882905]
+position = Vector2(-104, -170)
+texture = ExtResource("37_g8q35")
+
+[node name="Grass04" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/LowDryGrass" unique_id=578852944]
+position = Vector2(183, -276)
+texture = ExtResource("38_kdadn")
+
+[node name="Grass05" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/LowDryGrass" unique_id=2137465984]
+position = Vector2(121, -300)
+texture = ExtResource("39_6e5rj")
+
+[node name="Grass06" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/LowDryGrass" unique_id=1529713674]
+position = Vector2(255, -256)
+texture = ExtResource("40_3yqxx")
+
+[node name="Grass07" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/LowDryGrass" unique_id=2112859017]
+position = Vector2(223, -283)
+texture = ExtResource("41_7rqe0")
+
+[node name="Grass08" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/LowDryGrass" unique_id=344451423]
+position = Vector2(106, -281)
+texture = ExtResource("42_fi8fg")
+
+[node name="Grass09" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/LowDryGrass" unique_id=1852548368]
+position = Vector2(96, -268)
+texture = ExtResource("43_jtpx3")
+
+[node name="Grass10" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/LowDryGrass" unique_id=397672526]
+position = Vector2(-38, -276)
+texture = ExtResource("44_gora3")
+
+[node name="Grass11" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/LowDryGrass" unique_id=1748992974]
+position = Vector2(-22, -267)
+texture = ExtResource("36_t25rt")
+
+[node name="Grass12" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/LowDryGrass" unique_id=80788147]
+position = Vector2(-109, -165)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("36_t25rt")
+
+[node name="Grass13" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/LowDryGrass" unique_id=493045762]
+position = Vector2(-209, -227)
+texture = ExtResource("36_t25rt")
+
+[node name="Grass14" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/LowDryGrass" unique_id=394027556]
+position = Vector2(-172, -246)
+texture = ExtResource("44_gora3")
+
+[node name="Grass15" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/LowDryGrass" unique_id=2122104769]
+position = Vector2(-169, -304)
+texture = ExtResource("41_7rqe0")
+
+[node name="Grass16" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/LowDryGrass" unique_id=1386032693]
+position = Vector2(-40, -248)
+texture = ExtResource("35_tenvm")
+
+[node name="Grass17" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/LowDryGrass" unique_id=1301239367]
+position = Vector2(3.0000005, -254)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("36_t25rt")
+
+[node name="Grass18" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/LowDryGrass" unique_id=1210688317]
+position = Vector2(-11, -237)
+texture = ExtResource("37_g8q35")
+
+[node name="Grass19" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/LowDryGrass" unique_id=2038147576]
+position = Vector2(32, -238)
+texture = ExtResource("39_6e5rj")
+
+[node name="Grass20" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/LowDryGrass" unique_id=1584913897]
+position = Vector2(112, -245)
+texture = ExtResource("40_3yqxx")
+
+[node name="Grass21" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/LowDryGrass" unique_id=288218815]
+position = Vector2(74, -224)
+texture = ExtResource("41_7rqe0")
+
+[node name="Grass22" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/LowDryGrass" unique_id=935401102]
+position = Vector2(62, -218)
+texture = ExtResource("42_fi8fg")
+
+[node name="Grass23" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/LowDryGrass" unique_id=1746243241]
+position = Vector2(85, -196)
+texture = ExtResource("42_fi8fg")
+
+[node name="Grass24" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/LowDryGrass" unique_id=1545882325]
+position = Vector2(162, -231)
+texture = ExtResource("41_7rqe0")
+
+[node name="Grass25" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/LowDryGrass" unique_id=1505878773]
+position = Vector2(227, -221)
+texture = ExtResource("43_jtpx3")
+
+[node name="Grass26" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/LowDryGrass" unique_id=2022115295]
+position = Vector2(-170, -212)
+texture = ExtResource("40_3yqxx")
+
+[node name="Grass27" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/LowDryGrass" unique_id=1752786208]
+position = Vector2(-132, -241)
+texture = ExtResource("36_t25rt")
+
+[node name="Grass28" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/LowDryGrass" unique_id=1129464431]
+position = Vector2(-320, -207)
+texture = ExtResource("41_7rqe0")
+
+[node name="Grass29" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/LowDryGrass" unique_id=692834175]
+position = Vector2(-373, -190)
+texture = ExtResource("39_6e5rj")
+
+[node name="Grass30" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/LowDryGrass" unique_id=1365082916]
+position = Vector2(-281, -221)
+texture = ExtResource("40_3yqxx")
+
+[node name="Grass31" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/LowDryGrass" unique_id=2141637047]
+position = Vector2(-348, -177)
+texture = ExtResource("40_3yqxx")
+
+[node name="Grass32" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/LowDryGrass" unique_id=1722981557]
+position = Vector2(-350, -201)
+texture = ExtResource("40_3yqxx")
+
+[node name="Grass33" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/LowDryGrass" unique_id=640725490]
+position = Vector2(-305, -175)
+texture = ExtResource("36_t25rt")
+
+[node name="FallenLeaves" type="Node2D" parent="VisualOverlays/GroundDecalRoot" unique_id=1143050363]
+
+[node name="leaves01" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/FallenLeaves" unique_id=744018645]
+position = Vector2(-85, -358)
+texture = ExtResource("50_f0238")
+
+[node name="leaves02" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/FallenLeaves" unique_id=619035826]
+position = Vector2(-246, -372)
+texture = ExtResource("46_fi8fg")
+
+[node name="leaves03" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/FallenLeaves" unique_id=871258624]
+position = Vector2(-281, -253)
+texture = ExtResource("50_f0238")
+
+[node name="leaves04" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/FallenLeaves" unique_id=692956090]
+position = Vector2(-330, -148)
+texture = ExtResource("46_fi8fg")
+
+[node name="leaves05" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/FallenLeaves" unique_id=990141835]
+position = Vector2(319, -324)
+texture = ExtResource("50_f0238")
+
+[node name="leaves06" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/FallenLeaves" unique_id=1685342576]
+position = Vector2(266, -227)
+texture = ExtResource("46_fi8fg")
+
+[node name="Twigs" type="Node2D" parent="VisualOverlays/GroundDecalRoot" unique_id=36906619]
+
+[node name="Twing01" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/Twigs" unique_id=688665409]
+position = Vector2(-56, -246)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("45_t25rt")
+
+[node name="Twing02" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/Twigs" unique_id=619542763]
+position = Vector2(101, -237)
+texture = ExtResource("46_7rqe0")
+
+[node name="Twing03" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/Twigs" unique_id=1812474334]
+position = Vector2(-53, -294)
+texture = ExtResource("47_fi8fg")
+
+[node name="Twing04" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/Twigs" unique_id=762793297]
+position = Vector2(243, -267)
+texture = ExtResource("48_jtpx3")
+
+[node name="Twing05" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/Twigs" unique_id=438142668]
+position = Vector2(270, -214)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("49_gora3")
+
+[node name="Twing06" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/Twigs" unique_id=661091772]
+position = Vector2(-81, -171)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("46_7rqe0")
+
+[node name="Twing07" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/Twigs" unique_id=53996725]
+position = Vector2(-186, -206)
+texture = ExtResource("48_jtpx3")
+
+[node name="Twing08" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/Twigs" unique_id=793896379]
+position = Vector2(-316, -144)
+texture = ExtResource("45_t25rt")
+
+[node name="SmallStones" type="Node2D" parent="VisualOverlays/GroundDecalRoot" unique_id=619869034]
+position = Vector2(0, 1)
+
+[node name="stone01" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/SmallStones" unique_id=1272994394]
+position = Vector2(79, -254)
+texture = ExtResource("52_jtpx3")
+
+[node name="stone02" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/SmallStones" unique_id=1505882119]
+position = Vector2(-141, -232)
+texture = ExtResource("53_f0238")
+
+[node name="stone03" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/SmallStones" unique_id=1079358488]
+position = Vector2(75, -270)
+texture = ExtResource("54_q71q4")
+
+[node name="stone04" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/SmallStones" unique_id=1288807615]
+position = Vector2(243, -257)
+texture = ExtResource("52_jtpx3")
+
+[node name="stone05" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/SmallStones" unique_id=549065622]
+position = Vector2(344, -203)
+texture = ExtResource("53_f0238")
+
+[node name="stone06" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/SmallStones" unique_id=1558164012]
+position = Vector2(220, -293)
+texture = ExtResource("54_q71q4")
+
+[node name="stone07" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/SmallStones" unique_id=613492786]
+position = Vector2(-26, -200)
+texture = ExtResource("53_f0238")
+
+[node name="stone08" type="Sprite2D" parent="VisualOverlays/GroundDecalRoot/SmallStones" unique_id=1122204814]
+position = Vector2(-271, -191)
+texture = ExtResource("54_q71q4")
+
+[node name="GrassColorPatches" type="Node2D" parent="VisualOverlays" unique_id=513505733]
+position = Vector2(0, -1)
+
+[node name="GrassColorPatchSpawner" type="Node2D" parent="VisualOverlays/GrassColorPatches" unique_id=1700017305]
+script = ExtResource("27_e4bm0")
+patch_textures = Array[Texture2D]([ExtResource("28_06qrm"), ExtResource("29_06qrm"), ExtResource("30_jevyu"), ExtResource("32_p5sbp"), ExtResource("33_1rh5a")])
+
+[node name="CloverOverlays" type="Node2D" parent="VisualOverlays" unique_id=269745438]
+
+[node name="CloverOverlaySpawner" type="Node2D" parent="VisualOverlays/CloverOverlays" unique_id=166320601]
+script = ExtResource("33_jevyu")
+clover_textures = Array[Texture2D]([ExtResource("34_js0wh"), ExtResource("35_js0wh"), ExtResource("36_jlxe8")])
+
+[node name="GrassTuftOverlays" type="Node2D" parent="VisualOverlays" unique_id=1946948440]
+z_index = 1
+
+[node name="GrassTuftOverlaySpawner" type="Node2D" parent="VisualOverlays/GrassTuftOverlays" unique_id=1678996610]
+script = ExtResource("27_117vm")
+tuft_textures = Array[Texture2D]([ExtResource("35_p5sbp"), ExtResource("36_ajmhc"), ExtResource("33_kqqcm"), ExtResource("38_06qrm")])
+tuft_material = SubResource("ShaderMaterial_bpf53")
+
+[node name="FlowerOverlays" type="Node2D" parent="VisualOverlays" unique_id=1176376159]
+z_index = 2
+
+[node name="FlowerOverlaySpawner" type="Node2D" parent="VisualOverlays/FlowerOverlays" unique_id=1628537160]
+script = ExtResource("37_eycl2")
+white_flower_textures = Array[Texture2D]([ExtResource("38_vmak1"), ExtResource("39_vmak1"), ExtResource("40_cp7di"), ExtResource("41_h1p51"), ExtResource("42_aacc1"), ExtResource("49_1rh5a"), ExtResource("50_0mng5"), ExtResource("59_1hw4x"), ExtResource("60_w5rid")])
+pink_flower_textures = Array[Texture2D]([ExtResource("41_lkldd"), ExtResource("42_h1p51")])
+flower_material = SubResource("ShaderMaterial_cp7di")
+
+[node name="ShadowOverlays" type="Node2D" parent="VisualOverlays" unique_id=2126066039]
+
+[node name="BushOverlays" type="Node2D" parent="VisualOverlays" unique_id=2032949836]
+z_index = 4
+
+[node name="BushOverlaySpawner" type="Node2D" parent="VisualOverlays/BushOverlays" unique_id=1709761796]
+script = ExtResource("45_ekb8v")
+low_bush_scene = ExtResource("46_ajmhc")
+bush_textures = Array[Texture2D]([ExtResource("55_d3ha6"), ExtResource("56_65rc6"), ExtResource("57_34scv"), ExtResource("58_go50p")])
+bush_material = SubResource("ShaderMaterial_ekb8v")
+
+[node name="Objects" type="Node2D" parent="." unique_id=1541012413]
+
+[node name="FieldArea" type="Node2D" parent="Objects" unique_id=2117116300 groups=["field_area"]]
+position = Vector2(-250, 40)
+script = ExtResource("1_5qbjp")
+cropCellsPath = NodePath("../YSortObjects")
+
+[node name="FieldDebugArea" type="ColorRect" parent="Objects/FieldArea" unique_id=1828774492]
+offset_right = 576.0
+offset_bottom = 320.0
+color = Color(0.47843137, 0.23137255, 0.039215688, 0.14901961)
+
+[node name="DryDirtPatchCells" type="Node2D" parent="Objects/FieldArea" unique_id=2039979254]
+
+[node name="ScratchCells" type="Node2D" parent="Objects/FieldArea" unique_id=1372168801]
+
+[node name="PartlyTilledCells" type="Node2D" parent="Objects/FieldArea" unique_id=1326225372]
+
+[node name="TilledCells" type="Node2D" parent="Objects/FieldArea" unique_id=661691237]
+z_index = 2
+
+[node name="WateredCells" type="Node2D" parent="Objects/FieldArea" unique_id=524214719]
+z_index = 2
+
+[node name="VegetationSpawner" type="Node2D" parent="Objects" unique_id=1995513636]
+script = ExtResource("21_mmgww")
+groundPath = NodePath("../../Ground")
+boundsRootPath = NodePath("../../Boundaries")
+deadGrassSpawnChance = 28
+deadGrassScatterChance = 40
+deadGrassPatchScene = ExtResource("20_o0dc1")
+deadGrassScatterSmallScene = ExtResource("22_jy5j1")
+clearableObjectsRootPath = NodePath("../YSortObjects/ClearableObjects")
+
+[node name="SpawnBlockers" type="Node2D" parent="Objects" unique_id=901891831]
+
+[node name="HouseBlocker" type="Area2D" parent="Objects/SpawnBlockers" unique_id=577204463 groups=["vegetation_spawn_blocker"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/SpawnBlockers/HouseBlocker" unique_id=143717082]
+position = Vector2(0, -185)
+shape = SubResource("RectangleShape2D_jy5j1")
+
+[node name="DoorFrontBlocker" type="Area2D" parent="Objects/SpawnBlockers" unique_id=1917815989 groups=["vegetation_spawn_blocker"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/SpawnBlockers/DoorFrontBlocker" unique_id=1122635501]
+position = Vector2(0.75, -109)
+shape = SubResource("RectangleShape2D_umbuh")
+
+[node name="ShippingBoxBlocker" type="Area2D" parent="Objects/SpawnBlockers" unique_id=179916275 groups=["vegetation_spawn_blocker"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/SpawnBlockers/ShippingBoxBlocker" unique_id=167962740]
+position = Vector2(174.5, 124.75)
+shape = SubResource("RectangleShape2D_juaju")
+
+[node name="PathBlocker" type="Area2D" parent="Objects/SpawnBlockers" unique_id=1293621274 groups=["vegetation_spawn_blocker"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/SpawnBlockers/PathBlocker" unique_id=700325235]
+position = Vector2(0.5, 268.5)
+shape = SubResource("RectangleShape2D_lplgh")
+
+[node name="FarmBlockers" type="Node2D" parent="Objects" unique_id=153173877]
+
+[node name="HouseFarmBlocker" type="Area2D" parent="Objects/FarmBlockers" unique_id=1635548440 groups=["no_farm_blocker"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/FarmBlockers/HouseFarmBlocker" unique_id=75569644]
+position = Vector2(0, -178)
+shape = SubResource("RectangleShape2D_farm_house")
+
+[node name="DoorFrontFarmBlocker" type="Area2D" parent="Objects/FarmBlockers" unique_id=693993409 groups=["no_farm_blocker"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/FarmBlockers/DoorFrontFarmBlocker" unique_id=1081398623]
+position = Vector2(0, 112)
+shape = SubResource("RectangleShape2D_farm_door")
+
+[node name="MailboxFarmBlocker" type="Area2D" parent="Objects/FarmBlockers" unique_id=248991586 groups=["no_farm_blocker"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/FarmBlockers/MailboxFarmBlocker" unique_id=1798351025]
+position = Vector2(174.5, 124.75)
+shape = SubResource("RectangleShape2D_farm_mailbox")
+
+[node name="GatePathFarmBlocker" type="Area2D" parent="Objects/FarmBlockers" unique_id=1515390347 groups=["no_farm_blocker"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/FarmBlockers/GatePathFarmBlocker" unique_id=88247765]
+position = Vector2(0, 350)
+shape = SubResource("RectangleShape2D_farm_gate_path")
+
+[node name="SouthWallFarmBlocker" type="Area2D" parent="Objects/FarmBlockers" unique_id=1390886528 groups=["no_farm_blocker"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/FarmBlockers/SouthWallFarmBlocker" unique_id=64931394]
+position = Vector2(0, 450)
+shape = SubResource("RectangleShape2D_farm_south_wall")
+
+[node name="YSortObjects" type="Node2D" parent="Objects" unique_id=90671629]
+z_index = 10
+y_sort_enabled = true
+
+[node name="CropCells" type="Node2D" parent="Objects/YSortObjects" unique_id=604839507]
+position = Vector2(-250, 40)
+
+[node name="ClearableObjects" type="Node2D" parent="Objects/YSortObjects" unique_id=812712116]
+y_sort_enabled = true
+
+[node name="Shop" type="StaticBody2D" parent="Objects/YSortObjects" unique_id=622962485]
+visible = false
+position = Vector2(140, -140)
+script = ExtResource("1_6eebf")
+
+[node name="ShopPlaceholder" type="ColorRect" parent="Objects/YSortObjects/Shop" unique_id=1720582747]
+visible = false
+offset_right = 120.0
+offset_bottom = 72.0
+color = Color(0.8983919, 0.8547091, 0.31464404, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/YSortObjects/Shop" unique_id=1923901958]
+position = Vector2(60, 36)
+shape = SubResource("RectangleShape2D_qxiha")
+
+[node name="ShopSprite" type="Sprite2D" parent="Objects/YSortObjects/Shop" unique_id=206571206]
+position = Vector2(60, 10)
+texture = ExtResource("3_i1jm3")
+
+[node name="ShippingBox" type="StaticBody2D" parent="Objects/YSortObjects" unique_id=1141317877]
+visible = false
+position = Vector2(150, 100)
+script = ExtResource("1_1oml7")
+
+[node name="ShippingBoxPlaceholder" type="ColorRect" parent="Objects/YSortObjects/ShippingBox" unique_id=1903737101]
+offset_right = 48.0
+offset_bottom = 48.0
+color = Color(0.57254905, 0.30980393, 0.17254902, 1)
+
+[node name="ShippingBoxSprite" type="Sprite2D" parent="Objects/YSortObjects/ShippingBox" unique_id=2064037780]
+position = Vector2(24, 24)
+texture = ExtResource("3_gbddb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/YSortObjects/ShippingBox" unique_id=3908665]
+position = Vector2(24, 23.5)
+shape = SubResource("RectangleShape2D_i1jm3")
+
+[node name="BigTree01" parent="Objects/YSortObjects" unique_id=538056954 instance=ExtResource("66_0mng5")]
+position = Vector2(39, -348)
+
+[node name="BigTree02" parent="Objects/YSortObjects" unique_id=20098213 instance=ExtResource("66_0mng5")]
+position = Vector2(-172, -356)
+scale = Vector2(0.8, 0.8)
+
+[node name="BigTree03" parent="Objects/YSortObjects" unique_id=1654786886 instance=ExtResource("72_doguq")]
+position = Vector2(240, -337)
+
+[node name="BigTree04" parent="Objects/YSortObjects" unique_id=2001864317 instance=ExtResource("72_doguq")]
+position = Vector2(-282, -301)
+
+[node name="BigTree05" parent="Objects/YSortObjects" unique_id=1238207691 instance=ExtResource("66_0mng5")]
+position = Vector2(-393, -258)
+
+[node name="SmallTree01" parent="Objects/YSortObjects" unique_id=961012621 instance=ExtResource("70_mf05o")]
+position = Vector2(-92, -327)
+
+[node name="SmallTree02" parent="Objects/YSortObjects" unique_id=1061940538 instance=ExtResource("70_mf05o")]
+position = Vector2(152.00002, -364)
+scale = Vector2(0.9, 0.9)
+
+[node name="SmallTree03" parent="Objects/YSortObjects" unique_id=1944295109 instance=ExtResource("68_f4f3b")]
+position = Vector2(274, -303)
+
+[node name="SmallTree04" parent="Objects/YSortObjects" unique_id=2054759242 instance=ExtResource("70_mf05o")]
+position = Vector2(-424, -204)
+
+[node name="SmallTree05" parent="Objects/YSortObjects" unique_id=1611747027 instance=ExtResource("70_mf05o")]
+position = Vector2(-525, -199)
+scale = Vector2(0.9, 0.9)
+
+[node name="SmallTree06" parent="Objects/YSortObjects" unique_id=1993944509 instance=ExtResource("68_f4f3b")]
+position = Vector2(-466, -161)
+
+[node name="Player" parent="Objects/YSortObjects" unique_id=506348849 instance=ExtResource("7_252at")]
+
+[node name="HouseBackgroundVisuals" type="Node2D" parent="Objects/YSortObjects" unique_id=1429948929]
+
+[node name="PlayerHouseBackground" parent="Objects/YSortObjects" unique_id=1642336941 instance=ExtResource("38_house_bg")]
+position = Vector2(0, -96)
+
+[node name="HouseForegroundVisuals" type="Node2D" parent="Objects/YSortObjects" unique_id=1520905628]
+z_index = 20
+
+[node name="PlayerHouseForeground" parent="Objects/YSortObjects" unique_id=1685174433 instance=ExtResource("39_house_fg")]
+position = Vector2(0, 104)
+
+[node name="PlayerHouse" parent="Objects/YSortObjects" unique_id=1466338381 instance=ExtResource("37_nres0")]
+position = Vector2(0, -96)
+frontWallRootPath = NodePath("../PlayerHouseForeground/FrontWallRoot")
+
+[node name="MailAcceawssObject" type="Area2D" parent="Objects/YSortObjects" unique_id=1923188781]
+visible = false
+script = ExtResource("38_nres0")
+isRepaired = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/YSortObjects/MailAcceawssObject" unique_id=206820374]
+position = Vector2(0, -18)
+shape = SubResource("RectangleShape2D_bmjh4")
+
+[node name="InteractionPoint" type="Marker2D" parent="Objects/YSortObjects/MailAcceawssObject" unique_id=1415866983]
+
+[node name="BigTree06" parent="Objects/YSortObjects" unique_id=1702838326 instance=ExtResource("66_0mng5")]
+position = Vector2(401, -286)
+
+[node name="BigTree07" parent="Objects/YSortObjects" unique_id=683648029 instance=ExtResource("66_0mng5")]
+position = Vector2(-51, -423)
+
+[node name="BigTree08" parent="Objects/YSortObjects" unique_id=641982365 instance=ExtResource("66_0mng5")]
+position = Vector2(136, -425)
+
+[node name="BigTree09" parent="Objects/YSortObjects" unique_id=515887314 instance=ExtResource("72_doguq")]
+position = Vector2(452, -217)
+
+[node name="SmallTree07" parent="Objects/YSortObjects" unique_id=1264962850 instance=ExtResource("70_mf05o")]
+position = Vector2(478, -179)
+
+[node name="BigTree10" parent="Objects/YSortObjects" unique_id=1248601019 instance=ExtResource("66_0mng5")]
+position = Vector2(-303, -433)
+
+[node name="BigTree11" parent="Objects/YSortObjects" unique_id=1885459019 instance=ExtResource("66_0mng5")]
+position = Vector2(-570, -352)
+scale = Vector2(0.9, 0.9)
+
+[node name="SmallTree08" parent="Objects/YSortObjects" unique_id=1135028722 instance=ExtResource("70_mf05o")]
+position = Vector2(162, -254)
+scale = Vector2(0.8, 0.8)
+
+[node name="SmallTree09" parent="Objects/YSortObjects" unique_id=1996474854 instance=ExtResource("68_f4f3b")]
+position = Vector2(-219, -248.00002)
+scale = Vector2(0.7, 0.7)
+
+[node name="BigTree12" parent="Objects/YSortObjects" unique_id=1906549953 instance=ExtResource("72_doguq")]
+position = Vector2(-620, -232)
+
+[node name="BigTree13" parent="Objects/YSortObjects" unique_id=1244854925 instance=ExtResource("66_0mng5")]
+position = Vector2(577, -308)
+
+[node name="BigTree14" parent="Objects/YSortObjects" unique_id=1232008988 instance=ExtResource("66_0mng5")]
+position = Vector2(602, -161)
+
+[node name="SmallTree10" parent="Objects/YSortObjects" unique_id=358959482 instance=ExtResource("70_mf05o")]
+position = Vector2(-108, -196.00002)
+scale = Vector2(0.6, 0.6)
+
+[node name="BasaltWallColumnWest" parent="Objects/YSortObjects" unique_id=1275056939 instance=ExtResource("107_65rc6")]
+position = Vector2(-563, -140)
+
+[node name="BasaltWallRubbleWest1" parent="Objects/YSortObjects" unique_id=494193020 instance=ExtResource("108_34scv")]
+position = Vector2(-577, -134)
+
+[node name="BasaltWallRubbleWest2" parent="Objects/YSortObjects" unique_id=29630251 instance=ExtResource("108_34scv")]
+position = Vector2(-540, -172)
+
+[node name="BasaltWallVerticalWest1" parent="Objects/YSortObjects" unique_id=1037017229 instance=ExtResource("110_34scv")]
+position = Vector2(-594, -41)
+
+[node name="BasaltWallVerticalWest2" parent="Objects/YSortObjects" unique_id=1210223248 instance=ExtResource("110_34scv")]
+position = Vector2(-591, 142)
+
+[node name="BasaltWallVerticalWest3" parent="Objects/YSortObjects" unique_id=830121434 instance=ExtResource("110_34scv")]
+position = Vector2(-590, 325)
+
+[node name="BasaltWallVerticalWest4" parent="Objects/YSortObjects" unique_id=571650605 instance=ExtResource("110_34scv")]
+visible = false
+position = Vector2(-583, 497)
+
+[node name="BasaltWallColumnSouth1" parent="Objects/YSortObjects" unique_id=2082453887 instance=ExtResource("107_65rc6")]
+position = Vector2(-579, 443)
+
+[node name="BasaltWallBrokenSouth" parent="Objects/YSortObjects" unique_id=236364363 instance=ExtResource("106_rwl3o")]
+position = Vector2(2, 431)
+
+[node name="BasaltWallHorizontalSouth1" parent="Objects/YSortObjects" unique_id=1192544287 instance=ExtResource("109_go50p")]
+position = Vector2(-385, 447)
+
+[node name="BasaltWallHorizontalSouth2" parent="Objects/YSortObjects" unique_id=914694249 instance=ExtResource("109_go50p")]
+position = Vector2(391, 447)
+
+[node name="BasaltWallColumnSouth2" parent="Objects/YSortObjects" unique_id=171245562 instance=ExtResource("107_65rc6")]
+position = Vector2(-44, 430)
+
+[node name="BasaltWallColumnSouth3" parent="Objects/YSortObjects" unique_id=200837519 instance=ExtResource("107_65rc6")]
+position = Vector2(46, 429)
+
+[node name="BasaltWallRubbleSouth1" parent="Objects/YSortObjects" unique_id=754951958 instance=ExtResource("108_34scv")]
+position = Vector2(-37, 451)
+
+[node name="BasaltWallRubbleSouth2" parent="Objects/YSortObjects" unique_id=933571981 instance=ExtResource("108_34scv")]
+position = Vector2(58, 445)
+
+[node name="BasaltWallVerticalEast1" parent="Objects/YSortObjects" unique_id=265184524 instance=ExtResource("110_34scv")]
+position = Vector2(594, 328)
+
+[node name="BasaltWallVerticalEast2" parent="Objects/YSortObjects" unique_id=2103741833 instance=ExtResource("110_34scv")]
+position = Vector2(590, 145)
+
+[node name="BasaltWallVerticalEast3" parent="Objects/YSortObjects" unique_id=542225801 instance=ExtResource("110_34scv")]
+position = Vector2(583, -36)
+
+[node name="BasaltWallVerticalEast4" parent="Objects/YSortObjects" unique_id=1724535337 instance=ExtResource("110_34scv")]
+visible = false
+position = Vector2(599, 508)
+
+[node name="BasaltWallRubbleEast1" parent="Objects/YSortObjects" unique_id=2112872269 instance=ExtResource("108_34scv")]
+position = Vector2(595, 431)
