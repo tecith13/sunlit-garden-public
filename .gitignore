@@ -1,0 +1,24 @@
+# Godot generated files
+.godot/
+.import/
+*.import
+
+# Original/private assets
+assets/sprites/
+assets/tilesets/
+assets/portraits/
+assets/ui/
+assets/audio/
+assets/generated/
+assets/source/
+
+# Large or raw files
+*.psd
+*.aseprite
+*.kra
+*.clip
+*.xcf
+*.wav
+*.mp3
+*.ogg
+*.zip
